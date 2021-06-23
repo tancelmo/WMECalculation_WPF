@@ -1,0 +1,24 @@
+﻿<Window x:Class="WMECalculation.Loading"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WMECalculation"
+        mc:Ignorable="d"
+        Style="{DynamicResource LoadingPage}"
+        WindowStartupLocation="CenterScreen"
+        Title="{DynamicResource Loading}" Height="200" Width="450"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True" Opacity="0.95">
+    <!--<Window.Effect>
+        <DropShadowEffect Color="Black" BlurRadius="5" RenderingBias="Quality" ShadowDepth="2"/>
+    </Window.Effect>-->
+    <Grid Background="AliceBlue">
+        <Image Source="Assets/Images/splash.png"/>
+        <Label Name="lbInit" x:FieldModifier="public" Content="{DynamicResource Starting}" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,5,5"/>
+        <Label Name="CheckFiles" Visibility="Hidden" x:FieldModifier="public" Content="{DynamicResource CheckFiles}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,0,0,5"/>
+        <Label Name="InitConnections" Visibility="Hidden" x:FieldModifier="public" Content="{DynamicResource InitConnections}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,0,0,5"/>
+        <Label x:Name="lbDbEngine" Visibility="Hidden" x:FieldModifier="public" Content="{DynamicResource lbEngine}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,0,0,5"/>
+    </Grid>
+</Window>

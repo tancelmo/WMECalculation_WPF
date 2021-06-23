@@ -1,0 +1,63 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <!--System Strings-->
+    
+    <system:String x:Key="Tittle">Cálculo EMP</system:String>
+    <system:String x:Key="TittleGearCorrection">Correção de engrenagens</system:String>
+    <system:String x:Key="Loading">Carregando</system:String>
+    <system:String x:Key="DbNotFound">Banco de dados não encontrado.</system:String>
+    <system:String x:Key="ConfigNotFound">Arquivo de configuração não encontrado.</system:String>
+    <system:String x:Key="NoEngine">Este aplicativo precisa do Access Database Engine, por favor faça o download e reinicie o aplicativo.</system:String>
+    <system:String x:Key="NoGSize">Nenhuma Designação G selecionada.</system:String>
+    <system:String x:Key="CheckIsNumber">Apenas números são permitidos. Tente novamente.</system:String>
+    <system:String x:Key="connectionError01">Não foi possivel conectar ao banco de dados. #001</system:String>
+    <system:String x:Key="connectionError02">Não foi possivel conectar ao banco de dados. #002</system:String>
+    <system:String x:Key="Minimize">Minimizar</system:String>
+    <system:String x:Key="Maximize">Maximize</system:String>
+    <system:String x:Key="Restore">Restore Down</system:String>
+    <system:String x:Key="Close">Fechar</system:String>
+
+    <!--Standart Strings-->
+    
+    <TextBlock x:Key="Options" Text="Opções"/>
+    <TextBlock x:Key="Language" Text="Idioma"/>
+    <TextBlock x:Key="English" Text="Inglês"/>
+    <TextBlock x:Key="Portuguese" Text="Português"/>
+    <TextBlock x:Key="Spanish" Text="Espanhol"/>
+    <TextBlock x:Key="Theme" Text="Temas"/>
+    <TextBlock x:Key="Correction" Text="Simular Correção"/>
+    <TextBlock x:Key="GSize" Text="Designação G"/>
+    <TextBlock x:Key="Range" Text="Range"/>
+    <TextBlock x:Key="Formula" Text="Fórmula"/>
+    <TextBlock x:Key="Result" Text="Resultado"/>
+    <TextBlock x:Key="Errors" Text="Erros"/>
+    <TextBlock x:Key="Qi" Text="Qi / Qmax"/>
+    <TextBlock x:Key="About" Text="Sobre"/>
+    <TextBlock x:Key="WeightFactor" Text="Fator de ponderação"/>
+    <TextBlock x:Key="WeightFactor1" Text="Fator de ponderação"/>
+    <TextBlock x:Key="WeightFactor2" Text="Fator de ponderação"/>
+    <TextBlock x:Key="WeightFactor3" Text="Fator de ponderação"/>
+    <TextBlock x:Key="WeightFactor4" Text="Fator de ponderação"/>
+    <TextBlock x:Key="WeightFactor5" Text="Fator de ponderação"/>
+    <TextBlock x:Key="WeightFactor6" Text="Fator de ponderação"/>
+    <TextBlock x:Key="WeightFactor7" Text="Fator de ponderação"/>
+    <TextBlock x:Key="Starting" Text="Iniciando..."/>
+    <TextBlock x:Key="CheckFiles" Text="Checando arquivos..."/>
+    <TextBlock x:Key="InitConnections" Text="Iniciando conexão..."/>
+    <TextBlock x:Key="currentGears" Text="Engranagens Atuais"/>
+    <TextBlock x:Key="newGears" Text="Novas Engranagens"/>
+    <TextBlock x:Key="percentCorrection" Text="% Correção"/>
+    <TextBlock x:Key="btnCalculate" Text="Calcular"/>
+    <TextBlock x:Key="lbEngine" Text="Checando Access Database Engine..."/>
+    
+
+
+
+
+
+    <TextBlock x:Key="test">
+       <Bold>Who care's if one more light</Bold><LineBreak/>In the sky, of a million stars.
+    </TextBlock>
+
+</ResourceDictionary>
