@@ -93,21 +93,34 @@ namespace WMECalculation
             {
                 Qmin = Convert.ToDouble(tbQm.Text);
 
+                var iniFile = new IniFile("config.ini");
 
-                Connection conn = new Connection();
-                OleDbCommand cmd = new OleDbCommand();
-                cmd.Connection = conn.Connect();
-                cmd.CommandText = "select* from Data where G_Calibre = '" + cbG.Text + "'";
-                OleDbDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                if (iniFile.Read("Database") == "Access")
                 {
-                    Flow = Convert.ToDouble(reader["Qmax"]);
-                    QiQmin = Convert.ToDouble(reader[Convert.ToString(cbR.Text)]);
+                    Connection conn = new Connection();
+                    OleDbCommand cmd = new OleDbCommand();
+                    cmd.Connection = conn.Connect();
+                    cmd.CommandText = "select* from Data where G_Calibre = '" + cbG.Text + "'";
+                    OleDbDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Flow = Convert.ToDouble(reader["Qmax"]);
+                        QiQmin = Convert.ToDouble(reader[Convert.ToString(cbR.Text)]);
+
+                        QiQm = QiQmin / Flow;
+                    }
+                    conn.disconnect();
+                }
+                else
+                {
+                    Flow = Convert.ToDouble(iniFile.Read(Convert.ToString(cbG.SelectedItem), "Qmax_Flow"));
+                    QiQmin = Convert.ToDouble(iniFile.Read(Convert.ToString(cbR.SelectedItem), "Qmin_" + Convert.ToString(cbG.SelectedItem)));
 
                     QiQm = QiQmin / Flow;
                 }
-                conn.disconnect();
+
+                
             }
             #endregion
 
@@ -118,7 +131,7 @@ namespace WMECalculation
 
             double sum = 0;
 
-
+            var readIni = new IniFile("config.ini");
 
             for (int i = 0; i < 8; i++)
             {
@@ -127,11 +140,18 @@ namespace WMECalculation
 
             result = sum / (QiValues.Sum());
             lbResult.Content = String.Format("{0:0.00}", result);
-            //MessageBox.Show(Convert.ToString(result));
-
+            
             if (Double.IsNaN(result))
             {
-                lbResult.Content = "0,00";
+                if(readIni.Read("Language") == "en-US")
+                {
+                    lbResult.Content = "0.00";
+                }
+                else
+                {
+                    lbResult.Content = "0,00";
+                }
+                
             }
 
             if (result > 0.404 || result < -0.404)
@@ -144,7 +164,7 @@ namespace WMECalculation
             }
             else
             {
-                var readIni = new IniFile("config.ini");
+                
                 var currentTheme = readIni.Read("Theme");
 
                 if (currentTheme == "Light")

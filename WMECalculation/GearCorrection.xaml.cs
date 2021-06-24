@@ -22,7 +22,7 @@ namespace WMECalculation
         public GearCorrection()
         {
             InitializeComponent();
-            StdFunctions.LoadGearCorrection(this, arrow);
+            StdFunctions.LoadGearCorrection(this);
             StdFunctions.AddGears(cbCurrentGears, cbNewGears, this);
         }
 

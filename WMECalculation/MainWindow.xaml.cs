@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks; 
 using System.Windows;
 using System.Windows.Controls;
@@ -43,7 +44,7 @@ namespace WMECalculation
             
             loading.CheckFiles.Visibility = Visibility.Visible;
             StdFunctions.CheckConfigFiles(this);
-            StdFunctions.StartUP(this, menuDark, menuLight, menuLang, menuTheme, menuCorrection, menuAbout, img);
+            StdFunctions.StartUP(this, menuDark, menuLight, menuLang, menuTheme, menuCorrection, menuAbout, img, lbResult);
             StdFunctions.CheckDbFiles(this);
             loading.CheckFiles.Visibility = Visibility.Hidden;
 
@@ -61,7 +62,7 @@ namespace WMECalculation
             InitConnections initConnections = new InitConnections();
             initConnections.ConnectComboBox(comboBoxG, comboBoxR, this);           
             loading.InitConnections.Visibility = Visibility.Hidden;
-            
+            loading.CheckFiles.Visibility = Visibility.Visible;
             loading.Close();
 
         }
@@ -78,7 +79,7 @@ namespace WMECalculation
 
         private void MenuPt_Click(object sender, RoutedEventArgs e)
         {
-            StdFunctions.SetLanguagePT(this, "pt-br");
+            StdFunctions.SetLanguage(this, "pt-BR", lbResult);
         }
 
         private void MenuDark_Click(object sender, RoutedEventArgs e)
@@ -88,7 +89,7 @@ namespace WMECalculation
 
         private void MenuEn_Click(object sender, RoutedEventArgs e)
         {
-            StdFunctions.SetLanguagePT(this, "en");
+            StdFunctions.SetLanguage(this, "en-US", lbResult);
         }
 
         private void MenuLight_Click(object sender, RoutedEventArgs e)
@@ -110,7 +111,7 @@ namespace WMECalculation
                 if (CalculateGears.checkCalutateBtn)
                 {
                     resultFromGears = CalculateGears.resultGear;
-                    CalculateGears.ApplyCalculatedGears(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, resultFromGears);
+                    CalculateGears.ApplyCalculatedGears(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, resultFromGears, imgGear1, imgGear2, arrow, lbTittle, btnClear);
                     Calculate.ExecuteCalc(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, comboBoxG, comboBoxR, lbResult);
                 }
             }
@@ -218,7 +219,8 @@ namespace WMECalculation
         {
             StdFunctions.UpdateComboBox(comboBoxG, comboBoxR, gbErros, gbQi);
             SetFlowRate.SetFlow(comboBoxG, comboBoxR, lbFQmax, lbFQ07, lbFQ04, lbFQ25, lbFQ15, lbFQ10, lbFQ05, lbFQm, lbwFQm);
-            StdFunctions.ResizeForm(this,lbResult, comboBoxR, gbErros, gbQi, Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm);
+            StdFunctions.ResetForm(this, lbResult, comboBoxR, gbErros, gbQi, Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, lbQ04, lbFQ04, lbQ25, lbFQ25, lbQ15, lbFQ15, lbQ10, lbFQ10, lbQ05, lbFQ05, lbQm, lbFQm, lbwTQ04, lbwFQ04, lbwTQ25, lbwFQ25, lbwTQ15, lbwFQ15, lbwTQ10, lbwFQ10, lbwTQ05, lbwFQ05, lbwTQm, lbwFQm);
+            StdFunctions.ResizeForm(this, lbResult, comboBoxR, gbErros, gbQi, Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, lbQ04,  lbFQ04,  lbQ25,  lbFQ25,  lbQ15,  lbFQ15,  lbQ10,  lbFQ10,  lbQ05,  lbFQ05,  lbQm,  lbFQm, lbwTQ04, lbwFQ04, lbwTQ25, lbwFQ25, lbwTQ15, lbwFQ15, lbwTQ10, lbwFQ10, lbwTQ05, lbwFQ05, lbwTQm, lbwFQm);
         }
 
         private void comboBoxG_MouseEnter(object sender, MouseEventArgs e)
@@ -231,9 +233,14 @@ namespace WMECalculation
             comboBoxR.Focus();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void btnClear_Click(object sender, RoutedEventArgs e)
         {
             
+            resultFromGears *= -1;
+            CalculateGears.ApplyCalculatedGears(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, resultFromGears, imgGear1, imgGear2, arrow, lbTittle, btnClear);
+            CalculateGears.ResetCalc(imgGear1, imgGear2, arrow, lbTittle, btnClear);
+            Calculate.ExecuteCalc(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, comboBoxG, comboBoxR, lbResult);
+
         }
     }
 }

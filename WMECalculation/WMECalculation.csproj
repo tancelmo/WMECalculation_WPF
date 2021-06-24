@@ -50,7 +50,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <ApplicationIcon>Icon_white.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -91,6 +91,12 @@
     <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationFramework.Aero2" />
@@ -134,11 +140,11 @@
     <Compile Include="Themes\LightTheme.xaml.cs">
       <DependentUpon>LightTheme.xaml</DependentUpon>
     </Compile>
-    <Page Include="Assets\Languages\en.xaml">
+    <Page Include="Assets\Languages\en-US.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Assets\Languages\pt-br.xaml">
+    <Page Include="Assets\Languages\pt-BR.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -217,12 +223,6 @@
     <Resource Include="Assets\Images\32_40.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\Images\arrow_white.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Assets\Images\arrow_grey.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Assets\Images\nogearimg.png" />
   </ItemGroup>
   <ItemGroup>
@@ -231,6 +231,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon_Black.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon_white.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

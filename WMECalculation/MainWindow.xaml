@@ -4,14 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WMECalculation"
-        Loaded="Window_Loaded"
+
         mc:Ignorable="d"
-        Width="320" Height="545"
+        Width="320" Height="555"
         WindowStartupLocation="CenterScreen"
         Style="{DynamicResource CustomWindowStyle}"
         Title="{DynamicResource Tittle}" ResizeMode="CanMinimize">
 
-    
+
     <Window.CommandBindings>
         <CommandBinding Command="New" CanExecute="menuCorrection_Click"/>
     </Window.CommandBindings>
@@ -114,22 +114,23 @@
                 Height="20"
                 Background="Transparent"
                 BorderBrush="Transparent"
-                Margin="266,74,0,0"
+                Margin="262,70,0,0"
                 Width="20"
                 WindowChrome.IsHitTestVisibleInChrome="True"                      
                 FontFamily="Assets/Fonts/#Segoe MDL2 Assets"
                 FontSize="12"
                 Content="&#xEB97;"
-                Click="btnClose_Click"
-                KeyboardNavigation.IsTabStop="False">
+                Click="btnClear_Click"
+                KeyboardNavigation.IsTabStop="False"
+                Visibility="Visible">
             <ToolTipService.ToolTip>
                 <TextBlock FontWeight="{x:Static SystemFonts.MessageFontWeight}" FontFamily="{x:Static SystemFonts.CaptionFontFamily}" FontSize="{x:Static SystemFonts.IconFontSize}" Text="{DynamicResource ClearCorrection}"/>
             </ToolTipService.ToolTip>
         </Button>
-        <Label x:Name="lbTittle" Width="112" HorizontalContentAlignment="Center" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="185,40,0,0" Content="Applied Correction"/>
-        <Image x:Name="imgGear1" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="201,74,0,0" Source="Assets/images/32_40.png"/>
-        <Image x:Name="arrow" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="221,74,0,0" Source="Assets/images/arrow_grey.png" RenderTransformOrigin="1.35,0.583"/>
-        <Image x:Name="imgGear2" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="241,74,0,0" Source="Assets/images/32_40.png"/>
+        <Label x:Name="lbTittle" x:FieldModifier="public" Visibility="Visible" Width="112" HorizontalContentAlignment="Center" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="180,40,0,0" Content="{DynamicResource AppliedCorrection}"/>
+        <Image x:Name="imgGear1" x:FieldModifier="public" Visibility="Visible" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="197,70,0,0" Source="Assets/images/32_40.png"/>
+        <Label x:Name="arrow" x:FieldModifier="public" Visibility="Visible" FontSize="10" FontFamily="Assets/Fonts/#Segoe MDL2 Assets" Content="&#xF0AF;" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="217,70,0,0" RenderTransformOrigin="1.35,0.583"/>
+        <Image x:Name="imgGear2" x:FieldModifier="public" Visibility="Visible" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="237,70,0,0" Source="Assets/images/32_40.png"/>
 
 
 
@@ -143,17 +144,17 @@
                 <Label x:Name="lbResult" Content="0,00" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontWeight="Bold" FontFamily="Arial" FontStyle="Italic" RenderTransformOrigin="0.509,0.023"/>
             </StackPanel>
         </GroupBox>
-        <GroupBox Name="gbErros" IsEnabled="False" Header="{DynamicResource Errors}" Height="335" Width="155" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,191,0,0">
+        <GroupBox Name="gbErros" IsEnabled="False" Header="{DynamicResource Errors}" Height="345" Width="155" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,191,0,0">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -171,34 +172,34 @@
                 <Label Name="lbFQmax" Content="????? m³/h" Foreground="{DynamicResource flowColor}" HorizontalContentAlignment="Right" Grid.Row="0" Grid.Column="0" Margin="0,13,0,0" FontStyle="Italic" FontSize="11" FontWeight="Bold"/>
                 <Label Content="0,7 Qmax" HorizontalContentAlignment="Right" Grid.Row="1" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
                 <Label Name="lbFQ07" Content="????? m³/h" Foreground="{DynamicResource flowColor}" HorizontalContentAlignment="Right" Grid.Row="1" Grid.Column="0" Margin="0,13,0,0" FontStyle="Italic" FontSize="11" FontWeight="Bold"/>
-                <Label Content="0,40 Qmax" HorizontalContentAlignment="Right" Grid.Row="2" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
+                <Label Name="lbQ04" Content="0,40 Qmax" HorizontalContentAlignment="Right" Grid.Row="2" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
                 <Label Name="lbFQ04" Content="????? m³/h" Foreground="{DynamicResource flowColor}" HorizontalContentAlignment="Right" Grid.Row="2" Grid.Column="0" Margin="0,13,0,0" FontStyle="Italic" FontSize="11" FontWeight="Bold"/>
-                <Label Content="0,25 Qmax" HorizontalContentAlignment="Right" Grid.Row="3" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
+                <Label Name="lbQ25" Content="0,25 Qmax" HorizontalContentAlignment="Right" Grid.Row="3" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
                 <Label Name="lbFQ25" Content="????? m³/h" Foreground="{DynamicResource flowColor}" HorizontalContentAlignment="Right" Grid.Row="3" Grid.Column="0" Margin="0,13,0,0" FontStyle="Italic" FontSize="11" FontWeight="Bold"/>
-                <Label Content="0,15 Qmax" HorizontalContentAlignment="Right" Grid.Row="4" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
+                <Label Name="lbQ15" Content="0,15 Qmax" HorizontalContentAlignment="Right" Grid.Row="4" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
                 <Label Name="lbFQ15" Content="????? m³/h" Foreground="{DynamicResource flowColor}" HorizontalContentAlignment="Right" Grid.Row="4" Grid.Column="0" Margin="0,13,0,0" FontStyle="Italic" FontSize="11" FontWeight="Bold"/>
-                <Label Content="0,10 Qmax" HorizontalContentAlignment="Right" Grid.Row="5" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
+                <Label Name="lbQ10" Content="0,10 Qmax" HorizontalContentAlignment="Right" Grid.Row="5" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
                 <Label Name="lbFQ10" Content="????? m³/h" Foreground="{DynamicResource flowColor}" HorizontalContentAlignment="Right" Grid.Row="5" Grid.Column="0" Margin="0,13,0,0" FontStyle="Italic" FontSize="11" FontWeight="Bold"/>
-                <Label Content="0,05 Qmax" HorizontalContentAlignment="Right" Grid.Row="6" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
+                <Label Name="lbQ05" Content="0,05 Qmax" HorizontalContentAlignment="Right" Grid.Row="6" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
                 <Label Name="lbFQ05" Content="????? m³/h" Foreground="{DynamicResource flowColor}" HorizontalContentAlignment="Right" Grid.Row="6" Grid.Column="0" Margin="0,13,0,0" FontStyle="Italic" FontSize="11" FontWeight="Bold"/>
-                <Label Content="Qmin" HorizontalContentAlignment="Right" Grid.Row="7" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
+                <Label Name="lbQm" Content="Qmin" HorizontalContentAlignment="Right" Grid.Row="7" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
                 <Label Name="lbFQm" Content="????? m³/h" Foreground="{DynamicResource flowColor}" HorizontalContentAlignment="Right" Grid.Row="7" Grid.Column="0" Margin="0,13,0,0" FontStyle="Italic" FontSize="11" FontWeight="Bold"/>
 
             </Grid>
 
 
         </GroupBox>
-        <GroupBox Name="gbQi" IsEnabled="False" Header="{DynamicResource Qi}" Height="335" Width="123" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,191,0,0">
+        <GroupBox Name="gbQi" IsEnabled="False" Header="{DynamicResource Qi}" Height="345" Width="123" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,191,0,0">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -207,17 +208,17 @@
                 <Label Name="lbwFQmax" Content="0,4" HorizontalAlignment="Left" Grid.Row="0" Margin="0,12,0,0"/>
                 <Label Content="{DynamicResource WeightFactor1}" HorizontalContentAlignment="Left" Grid.Row="1" Margin="0,-2,0,0" FontSize="11"/>
                 <Label Name="lbwFQ07" Content="0,7" HorizontalAlignment="Left" Grid.Row="1" Margin="0,12,0,0"/>
-                <Label Content="{DynamicResource WeightFactor2}" HorizontalContentAlignment="Left" Grid.Row="2" Margin="0,-2,0,0" FontSize="11"/>
+                <Label Name="lbwTQ04" Content="{DynamicResource WeightFactor2}" HorizontalContentAlignment="Left" Grid.Row="2" Margin="0,-2,0,0" FontSize="11"/>
                 <Label Name="lbwFQ04" Content="0,4" HorizontalAlignment="Left" Grid.Row="2" Margin="0,12,0,0"/>
-                <Label Content="{DynamicResource WeightFactor3}" HorizontalContentAlignment="Left" Grid.Row="3" Margin="0,-2,0,0" FontSize="11"/>
+                <Label Name="lbwTQ25" Content="{DynamicResource WeightFactor3}" HorizontalContentAlignment="Left" Grid.Row="3" Margin="0,-2,0,0" FontSize="11"/>
                 <Label Name="lbwFQ25" Content="0,25" HorizontalAlignment="Left" Grid.Row="3" Margin="0,12,0,0"/>
-                <Label Content="{DynamicResource WeightFactor4}" HorizontalContentAlignment="Left" Grid.Row="4" Margin="0,-2,0,0" FontSize="11"/>
+                <Label Name="lbwTQ15" Content="{DynamicResource WeightFactor4}" HorizontalContentAlignment="Left" Grid.Row="4" Margin="0,-2,0,0" FontSize="11"/>
                 <Label Name="lbwFQ15" Content="0,15" HorizontalAlignment="Left" Grid.Row="4" Margin="0,12,0,0"/>
-                <Label Content="{DynamicResource WeightFactor5}" HorizontalContentAlignment="Left" Grid.Row="5" Margin="0,-2,0,0" FontSize="11"/>
+                <Label Name="lbwTQ10" Content="{DynamicResource WeightFactor5}" HorizontalContentAlignment="Left" Grid.Row="5" Margin="0,-2,0,0" FontSize="11"/>
                 <Label Name="lbwFQ10" Content="0,10" HorizontalAlignment="Left" Grid.Row="5" Margin="0,12,0,0"/>
-                <Label Content="{DynamicResource WeightFactor6}" HorizontalContentAlignment="Left" Grid.Row="6" Margin="0,-2,0,0" FontSize="11"/>
+                <Label Name="lbwTQ05" Content="{DynamicResource WeightFactor6}" HorizontalContentAlignment="Left" Grid.Row="6" Margin="0,-2,0,0" FontSize="11"/>
                 <Label Name="lbwFQ05" Content="0,05" HorizontalAlignment="Left" Grid.Row="6" Margin="0,12,0,0"/>
-                <Label Content="{DynamicResource WeightFactor7}" HorizontalContentAlignment="Left" Grid.Row="7" Margin="0,-2,0,0" FontSize="11"/>
+                <Label Name="lbwTQm" Content="{DynamicResource WeightFactor7}" HorizontalContentAlignment="Left" Grid.Row="7" Margin="0,-2,0,0" FontSize="11"/>
                 <Label Name="lbwFQm" MaxWidth="60" Content="????" HorizontalAlignment="Left" Grid.Row="7" Margin="0,12,0,0"/>
             </Grid>
         </GroupBox>
