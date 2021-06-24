@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 
 namespace WMECalculation
@@ -514,6 +515,7 @@ namespace WMECalculation
 
         public static void ResizeForm(Window window,Label lbResult, ComboBox comboBoxR, GroupBox gbErrors, GroupBox gbQi, TextBox Qmax, TextBox Q07, TextBox Q04, TextBox Q025, TextBox Q015, TextBox Q01, TextBox Q005, TextBox Qmin, Label lbQ04, Label lbFQ04, Label lbQ25, Label lbFQ25, Label lbQ15, Label lbFQ15, Label lbQ10, Label lbFQ10, Label lbQ05, Label lbFQ05, Label lbQm, Label lbFQm, Label lbwTQ04, Label lbwFQ04, Label lbwTQ25, Label lbwFQ25, Label lbwTQ15, Label lbwFQ15, Label lbwTQ10, Label lbwFQ10, Label lbwTQ05, Label lbwFQ05, Label lbwTQm, Label lbwFQm)
         {
+
             var readIni = new IniFile("config.ini");
             var currentLanguage = readIni.Read("Language");
 
@@ -569,11 +571,12 @@ namespace WMECalculation
                 Grid.SetRow(lbwFQm, 4);
                 gbErrors.Height = 235;
                 gbQi.Height = 235;
-                window.Height = 445;
+                Animation.AnimateWindowHeight(window, 445, false);
+                //window.Height = 445;
             }
             if (Convert.ToString(comboBoxR.SelectedItem) == "20:1")
             {
-                
+                Animation.AnimateWindowHeight(window, 555, false);
                 //window.Height = 555;
             }
         }
