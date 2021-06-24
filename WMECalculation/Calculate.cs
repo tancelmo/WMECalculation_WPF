@@ -93,21 +93,34 @@ namespace WMECalculation
             {
                 Qmin = Convert.ToDouble(tbQm.Text);
 
+                var iniFile = new IniFile("config.ini");
 
-                Connection conn = new Connection();
-                OleDbCommand cmd = new OleDbCommand();
-                cmd.Connection = conn.Connect();
-                cmd.CommandText = "select* from Data where G_Calibre = '" + cbG.Text + "'";
-                OleDbDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                if (iniFile.Read("Database") == "Access")
                 {
-                    Flow = Convert.ToDouble(reader["Qmax"]);
-                    QiQmin = Convert.ToDouble(reader[Convert.ToString(cbR.Text)]);
+                    Connection conn = new Connection();
+                    OleDbCommand cmd = new OleDbCommand();
+                    cmd.Connection = conn.Connect();
+                    cmd.CommandText = "select* from Data where G_Calibre = '" + cbG.Text + "'";
+                    OleDbDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Flow = Convert.ToDouble(reader["Qmax"]);
+                        QiQmin = Convert.ToDouble(reader[Convert.ToString(cbR.Text)]);
+
+                        QiQm = QiQmin / Flow;
+                    }
+                    conn.disconnect();
+                }
+                else
+                {
+                    Flow = Convert.ToDouble(iniFile.Read(Convert.ToString(cbG.SelectedItem), "Qmax_Flow"));
+                    QiQmin = Convert.ToDouble(iniFile.Read(Convert.ToString(cbR.SelectedItem), "Qmin_" + Convert.ToString(cbG.SelectedItem)));
 
                     QiQm = QiQmin / Flow;
                 }
-                conn.disconnect();
+
+                
             }
             #endregion
 

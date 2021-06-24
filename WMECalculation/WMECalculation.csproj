@@ -134,11 +134,11 @@
     <Compile Include="Themes\LightTheme.xaml.cs">
       <DependentUpon>LightTheme.xaml</DependentUpon>
     </Compile>
-    <Page Include="Assets\Languages\en.xaml">
+    <Page Include="Assets\Languages\en-US.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Assets\Languages\pt-br.xaml">
+    <Page Include="Assets\Languages\pt-BR.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

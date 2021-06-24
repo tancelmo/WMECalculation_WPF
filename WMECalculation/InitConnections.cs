@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,34 +21,53 @@ namespace WMECalculation
 
 		public void ConnectComboBox(ComboBox cbCalibre, ComboBox cbRange, Window mainWindow)
         {
-            cmd.CommandText = "select * from Data";
+            var iniFile = new IniFile("config.ini");
+            
+            string[] GSizes = iniFile.Read("GSizes", "G_Sizes").Split(';');
+            string[] Ranges = iniFile.Read("Range", "Ranges").Split(';');
 
-			try
-			{
-				cmd.Connection = conn.Connect();
-                
+            
 
-				
+            if (iniFile.Read("Database") == "Access")
+            {
+                cmd.CommandText = "select * from Data";
 
-				OleDbDataReader reader = cmd.ExecuteReader();
-				while (reader.Read())
-				{
-					cbCalibre.Items.Add(reader["G_Calibre"]);
-				}
-				for (int index = 3; index < reader.FieldCount; index++)
-				{
-					cbRange.Items.Add(reader.GetName(index));
-				}
-                conn.disconnect();
+                try
+                {
+                    cmd.Connection = conn.Connect();
 
-			}
-			catch (Exception)
-			{
-				MessageBox.Show(Convert.ToString(mainWindow.FindResource("connectionError01")) + " " +Convert.ToString(Environment.CurrentDirectory) + "\\WMEData.accdb");
-				mainWindow.Close();
 
-			}
-		}
+
+
+                    OleDbDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        cbCalibre.Items.Add(reader["G_Calibre"]);
+                    }
+                    for (int index = 3; index < reader.FieldCount; index++)
+                    {
+                        cbRange.Items.Add(reader.GetName(index));
+                    }
+                    conn.disconnect();
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show(Convert.ToString(mainWindow.FindResource("connectionError01")) + " " + Convert.ToString(Environment.CurrentDirectory) + "\\WMEData.accdb");
+                    mainWindow.Close();
+
+                }
+            }
+            else
+            {
+                cbCalibre.ItemsSource = GSizes;
+                cbRange.ItemsSource = Ranges;
+            }
+            
+
+
+
+        }
 
     }
 }

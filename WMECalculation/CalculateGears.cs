@@ -17,47 +17,81 @@ namespace WMECalculation
 
         public static void CalculateGears1(ComboBox cb1, Window mainWindow)
         {
-            Connection conn = new Connection();
-            OleDbCommand cmd = new OleDbCommand();
-            cmd.CommandText = "select * from CalibrationGears where StringGear='" + cb1.SelectedItem + "'";
-
-            try
+            var iniFile = new IniFile("config.ini");
+            if (iniFile.Read("Database") == "Access")
             {
-                cmd.Connection = conn.Connect();
-                OleDbDataReader reader = cmd.ExecuteReader();
+                Connection conn = new Connection();
+                OleDbCommand cmd = new OleDbCommand();
+                cmd.CommandText = "select * from CalibrationGears where StringGear='" + cb1.SelectedItem + "'";
 
-                while (reader.Read())
+                try
                 {
-                    r1 = Convert.ToDouble(reader["Correction"]);
-                }conn.disconnect();
+                    cmd.Connection = conn.Connect();
+                    OleDbDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        r1 = Convert.ToDouble(reader["Correction"]);
+                    }
+                    conn.disconnect();
+                }
+                catch
+                {
+                    MessageBox.Show(Convert.ToString(mainWindow.FindResource("connectionError03")));
+                }
             }
-            catch
+            else
             {
-                MessageBox.Show(Convert.ToString(mainWindow.FindResource("connectionError03")));
+                if(iniFile.Read("Language") == "en-US")
+                {
+                    r1 = Convert.ToDouble(iniFile.Read(Convert.ToString(cb1.SelectedItem), "Gears_Correction").Replace(",","."));
+                }
+                else
+                {
+                    r1 = Convert.ToDouble(iniFile.Read(Convert.ToString(cb1.SelectedItem), "Gears_Correction"));
+                }
+               
             }
+                
         }
 
         public static void CalculateGears2(ComboBox cb2, Window mainWindow)
         {
-            Connection conn = new Connection();
-            OleDbCommand cmd = new OleDbCommand();
-            cmd.CommandText = "select * from CalibrationGears where StringGear='" + cb2.SelectedItem + "'";
-
-            try
+            var iniFile = new IniFile("config.ini");
+            if (iniFile.Read("Database") == "Access")
             {
-                cmd.Connection = conn.Connect();
-                OleDbDataReader reader = cmd.ExecuteReader();
+                Connection conn = new Connection();
+                OleDbCommand cmd = new OleDbCommand();
+                cmd.CommandText = "select * from CalibrationGears where StringGear='" + cb2.SelectedItem + "'";
 
-                while (reader.Read())
+                try
                 {
-                    r2 = Convert.ToDouble(reader["Correction"]);
+                    cmd.Connection = conn.Connect();
+                    OleDbDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        r2 = Convert.ToDouble(reader["Correction"]);
+                    }
+                    conn.disconnect();
                 }
-                conn.disconnect();
+                catch
+                {
+                    MessageBox.Show(Convert.ToString(mainWindow.FindResource("connectionError03")));
+                }
             }
-            catch
+            else
             {
-                MessageBox.Show(Convert.ToString(mainWindow.FindResource("connectionError03")));
+                if (iniFile.Read("Language") == "en-US")
+                {
+                    r2 = Convert.ToDouble(iniFile.Read(Convert.ToString(cb2.SelectedItem), "Gears_Correction").Replace(",", "."));
+                }
+                else
+                {
+                    r2 = Convert.ToDouble(iniFile.Read(Convert.ToString(cb2.SelectedItem), "Gears_Correction"));
+                }
             }
+
         }
 
         public static void ResultGears(ComboBox cb1, ComboBox cb2, Label lbResult)
@@ -85,7 +119,7 @@ namespace WMECalculation
             }
         }
 
-        public static void ApplyCalculatedGears(TextBox Qmax, TextBox Q07, TextBox Q04, TextBox Q025, TextBox Q015, TextBox Q01, TextBox Q005, TextBox Qmin, double resultFromGears)
+        public static void ApplyCalculatedGears(TextBox Qmax, TextBox Q07, TextBox Q04, TextBox Q025, TextBox Q015, TextBox Q01, TextBox Q005, TextBox Qmin, double resultFromGears, Image imgGear1, Image imgGear2, Image arrow, Label lbTittle, Button btnClear)
         {
             if (Qmax.Text == "")
             {
@@ -151,6 +185,22 @@ namespace WMECalculation
             {
                 Qmin.Text = String.Format("{0:0.00}", ((Convert.ToDouble(Qmin.Text) + resultFromGears)));
             }
+
+            imgGear1.Visibility = Visibility.Visible;
+            imgGear2.Visibility = Visibility.Visible;
+            lbTittle.Visibility = Visibility.Visible;
+            btnClear.Visibility = Visibility.Visible;
+            arrow.Visibility = Visibility.Visible;
+        }
+
+        public static void ResetCalc(Image imgGear1, Image imgGear2, Image arrow, Label lbTittle, Button btnClear)
+        {
+            imgGear1.Visibility = Visibility.Hidden;
+            imgGear2.Visibility = Visibility.Hidden;
+            lbTittle.Visibility = Visibility.Hidden;
+            btnClear.Visibility = Visibility.Hidden;
+            arrow.Visibility = Visibility.Hidden;
+
         }
     }
 }

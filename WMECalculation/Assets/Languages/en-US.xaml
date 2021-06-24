@@ -40,6 +40,7 @@
     <TextBlock x:Key="lbEngine" Text="Checking Access Database Engine..."/>
     <system:String x:Key="DbNotFound">Database not found.</system:String>
     <system:String x:Key="ConfigNotFound">Config file not found.</system:String>
+    <system:String x:Key="StringGearsNotFound">String Gears file not found.</system:String>
     <system:String x:Key="NoEngine">This applicatiton needs Access Database Engine, please download and restart the application.</system:String>
     <system:String x:Key="NoGSize">No G Size selected.</system:String>
     <system:String x:Key="ClearCorrection">Clear correction</system:String>
