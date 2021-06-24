@@ -108,7 +108,7 @@
                             SnapsToDevicePixels="true"
                             HorizontalAlignment="Stretch" 
                             VerticalAlignment="Stretch"
-                            CornerRadius="5">
+                            CornerRadius="3">
                         <ContentPresenter x:Name="contentPresenter" 
                                           Focusable="False" 
                                           Margin="{TemplateBinding Padding}" 
@@ -2376,7 +2376,7 @@
                     <Border x:Name="templateRoot" 
                             BorderBrush="{TemplateBinding BorderBrush}" 
                             BorderThickness="{TemplateBinding BorderThickness}" 
-                            Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            Background="{TemplateBinding Background}" SnapsToDevicePixels="True" CornerRadius="2">
                         <Grid x:Name="Grid" VerticalAlignment="Center">
                             
                             <Grid.ColumnDefinitions>

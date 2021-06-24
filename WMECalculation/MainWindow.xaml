@@ -122,15 +122,15 @@
                 Content="&#xEB97;"
                 Click="btnClear_Click"
                 KeyboardNavigation.IsTabStop="False"
-                Visibility="Visible">
+                Visibility="Hidden">
             <ToolTipService.ToolTip>
                 <TextBlock FontWeight="{x:Static SystemFonts.MessageFontWeight}" FontFamily="{x:Static SystemFonts.CaptionFontFamily}" FontSize="{x:Static SystemFonts.IconFontSize}" Text="{DynamicResource ClearCorrection}"/>
             </ToolTipService.ToolTip>
         </Button>
-        <Label x:Name="lbTittle" x:FieldModifier="public" Visibility="Visible" Width="112" HorizontalContentAlignment="Center" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="180,40,0,0" Content="{DynamicResource AppliedCorrection}"/>
-        <Image x:Name="imgGear1" x:FieldModifier="public" Visibility="Visible" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="197,70,0,0" Source="Assets/images/32_40.png"/>
-        <Label x:Name="arrow" x:FieldModifier="public" Visibility="Visible" FontSize="10" FontFamily="Assets/Fonts/#Segoe MDL2 Assets" Content="&#xF0AF;" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="217,70,0,0" RenderTransformOrigin="1.35,0.583"/>
-        <Image x:Name="imgGear2" x:FieldModifier="public" Visibility="Visible" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="237,70,0,0" Source="Assets/images/32_40.png"/>
+        <Label x:Name="lbTittle" x:FieldModifier="public" Visibility="Hidden" Width="112" HorizontalContentAlignment="Center" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="180,40,0,0" Content="{DynamicResource AppliedCorrection}" />
+        <Image x:Name="imgGear1" x:FieldModifier="public" Visibility="Hidden" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="197,70,0,0" Source="Assets/images/32_40.png"/>
+        <Label x:Name="arrow" x:FieldModifier="public" Visibility="Hidden" FontSize="10" FontFamily="Assets/Fonts/#Segoe MDL2 Assets" Content="&#xF0AF;" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="217,70,0,0" RenderTransformOrigin="1.35,0.583"/>
+        <Image x:Name="imgGear2" x:FieldModifier="public" Visibility="Hidden" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="237,70,0,0" Source="Assets/images/32_40.png"/>
 
 
 
