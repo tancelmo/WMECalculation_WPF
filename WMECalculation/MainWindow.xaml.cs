@@ -37,7 +37,7 @@ namespace WMECalculation
             /// Initialize Loading page
             Loading loading = new Loading();
             loading.Show();
-            Thread.Sleep(200);
+            Thread.Sleep(500);
 
             /// check files
             /// 
