@@ -1,19 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks; 
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 /// <summary>
 /// ToDo Resize Form
@@ -32,7 +21,11 @@ namespace WMECalculation
         public MainWindow()
         {
             InitializeComponent();
-            
+
+            /// 1 instance
+            /// 
+
+            StdFunctions.InstanceApp(this);
 
             /// Initialize Loading page
             Loading loading = new Loading();

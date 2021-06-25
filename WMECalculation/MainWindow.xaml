@@ -21,6 +21,7 @@
 
     <Grid>
         <Button x:Name="btnMinimize"
+                Template="{DynamicResource ChromeButton}"
                 UseLayoutRounding="True"
                 Background="Transparent"
                 BorderBrush="Transparent"

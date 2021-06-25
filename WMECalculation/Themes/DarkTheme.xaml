@@ -4748,8 +4748,8 @@
                 <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource ControlMouseOverBorderBrush}"/>
             </Trigger>
             <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Background" TargetName="border" Value="#FFF01428"/>
-                <Setter Property="BorderBrush" TargetName="border" Value="#FFF01428"/>
+                <Setter Property="Background" TargetName="border" Value="#C42B1C"/>
+                <Setter Property="BorderBrush" TargetName="border" Value="#C42B1C"/>
             </Trigger>
             <Trigger Property="IsPressed" Value="true">
                 <Setter Property="Background" TargetName="border" Value="#FF940A14"/>
@@ -4763,6 +4763,56 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
+    <ControlTemplate x:Key="ChromeButton" TargetType="{x:Type Button}">
+
+
+        <Border x:Name="border" 
+                
+                BorderBrush="{TemplateBinding BorderBrush}" 
+                BorderThickness="{TemplateBinding BorderThickness}" 
+                Background="{TemplateBinding Background}" 
+                SnapsToDevicePixels="true"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch">
+            <ContentPresenter x:Name="contentPresenter" 
+                              Focusable="False" 
+                              Margin="{TemplateBinding Padding}" 
+                              RecognizesAccessKey="True" 
+                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                              VerticalAlignment="Center"                              
+                              HorizontalAlignment="Center"/>
+        </Border>
+
+        <ControlTemplate.Triggers>
+
+            <Trigger Property="IsDefaulted" Value="true">
+                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource ControlMouseOverBorderBrush}"/>
+                <Setter  Property="TextElement.Foreground"  Value="white"/>
+
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+
+                <Setter Property="Background" TargetName="border" Value="{StaticResource ControlMouseOverBackground}"/>
+                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource ControlMouseOverBackground}"/>
+
+
+
+
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter Property="Background" TargetName="border" Value="{StaticResource ControlSelectedBackground}"/>
+                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource ControlSelectedBackground}"/>
+                <Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="white"/>
+
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Background" TargetName="border" Value="{StaticResource ControlBrightDefaultBackground}"/>
+                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource ControlBrightDefaultBorderBrush}"/>
+                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource WindowTitleColour}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+        
     <SolidColorBrush x:Key="ListBorder" Color="#828790"/>
     <Style TargetType="{x:Type TreeView}">
         <Setter Property="Background" Value="{StaticResource ContainerBackground}"/>

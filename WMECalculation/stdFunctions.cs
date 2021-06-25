@@ -17,6 +17,20 @@ namespace WMECalculation
 {
     class StdFunctions
     {
+        public static void InstanceApp(Window currentWindow)
+        {
+            // 1 instance of app
+
+            Process proc = Process.GetCurrentProcess();
+            int count = Process.GetProcesses().Where(p =>
+                p.ProcessName == proc.ProcessName).Count();
+
+            if (count > 1)
+            {
+                MessageBox.Show(Convert.ToString(currentWindow.FindResource("InstanceApp")));
+                App.Current.Shutdown();
+            }
+        }
         public static void StartUP(Window mainWindow, MenuItem menuDark, MenuItem menuLight, MenuItem menuLang, MenuItem menuTheme, MenuItem menuGear, MenuItem menuAbout, Image image, Label result)
         {
             var readIni = new IniFile("config.ini");
