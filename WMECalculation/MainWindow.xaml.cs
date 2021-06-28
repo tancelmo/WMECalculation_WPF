@@ -30,6 +30,7 @@ namespace WMECalculation
             /// Initialize Loading page
             Loading loading = new Loading();
             loading.Show();
+            loading.CheckFiles.Visibility = Visibility.Visible;
             Thread.Sleep(200);
 
             /// check files

@@ -6,7 +6,7 @@ namespace WMECalculation
     {
         public static void Send(Key key)
         { //Found online
-            var e = new KeyEventArgs(Keyboard.PrimaryDevice, Keyboard.PrimaryDevice.ActiveSource, 0, key)
+            KeyEventArgs e = new KeyEventArgs(Keyboard.PrimaryDevice, Keyboard.PrimaryDevice.ActiveSource, 0, key)
             {
                 RoutedEvent = Keyboard.KeyDownEvent
             };

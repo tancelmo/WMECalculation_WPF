@@ -579,14 +579,16 @@ namespace WMECalculation
                 Grid.SetRow(Qmin, 4);
                 Grid.SetRow(lbwTQm, 4);
                 Grid.SetRow(lbwFQm, 4);
-                gbErrors.Height = 235;
-                gbQi.Height = 235;
+                Animation.AnimateGroupBoxHeight(gbErrors, 235, false);
+                Animation.AnimateGroupBoxHeight(gbQi, 235, false);
                 Animation.AnimateWindowHeight(window, 445, false);
                 //window.Height = 445;
             }
             if (Convert.ToString(comboBoxR.SelectedItem) == "20:1")
             {
                 Animation.AnimateWindowHeight(window, 555, false);
+                Animation.AnimateGroupBoxHeight(gbErrors, 345, false);
+                Animation.AnimateGroupBoxHeight(gbQi, 345, false);
                 //window.Height = 555;
             }
         }

@@ -7,7 +7,7 @@ namespace WMECalculation
 {
     public class CalculateGears
     {
-         
+
         public static double r1 = 0, r2 = 0, resultGear = 0;
         public static bool checkCalutateBtn;
 
@@ -46,9 +46,9 @@ namespace WMECalculation
                 {
                     r1 = Convert.ToDouble(iniFile.Read(Convert.ToString(cb1.SelectedItem), "Gears_Correction"));
                 }
-               
+
             }
-                
+
         }
 
         public static void CalculateGears2(ComboBox cb2, Window mainWindow)
@@ -123,7 +123,7 @@ namespace WMECalculation
             }
             else
             {
-                Qmax.Text = String.Format("{0:0.00}", ((Convert.ToDouble(Qmax.Text) + resultFromGears)));
+                Qmax.Text = String.Format("{0:0.00}", (Convert.ToDouble(Qmax.Text) + resultFromGears));
             }
             if (Q07.Text == "")
             {
