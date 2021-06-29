@@ -579,17 +579,143 @@ namespace WMECalculation
                 Grid.SetRow(Qmin, 4);
                 Grid.SetRow(lbwTQm, 4);
                 Grid.SetRow(lbwFQm, 4);
-                Animation.AnimateGroupBoxHeight(gbErrors, 235, false);
-                Animation.AnimateGroupBoxHeight(gbQi, 235, false);
-                Animation.AnimateWindowHeight(window, 445, false);
+                Animation.AnimateGroupBoxHeight(gbErrors, 245, false);
+                Animation.AnimateGroupBoxHeight(gbQi, 245, false);
+                Animation.AnimateWindowHeight(window, 455, false);
                 //window.Height = 445;
             }
-            if (Convert.ToString(comboBoxR.SelectedItem) == "20:1")
+            else if (Convert.ToString(comboBoxR.SelectedItem) == "20:1")
             {
-                Animation.AnimateWindowHeight(window, 555, false);
-                Animation.AnimateGroupBoxHeight(gbErrors, 345, false);
-                Animation.AnimateGroupBoxHeight(gbQi, 345, false);
+                // hide labels forom GroupBox Errors
+
+                lbQ15.Visibility = Visibility.Hidden;
+                lbFQ15.Visibility = Visibility.Hidden;
+                lbQ05.Visibility = Visibility.Hidden;
+                lbFQ05.Visibility = Visibility.Hidden;
+
+                // hide labels from GroupBox QiQmax
+
+                lbwTQ15.Visibility = Visibility.Hidden;
+                lbwFQ15.Visibility = Visibility.Hidden;
+                lbwTQ05.Visibility = Visibility.Hidden;
+                lbwFQ05.Visibility = Visibility.Hidden;
+
+                //hide textbox
+
+                Q015.Visibility = Visibility.Hidden;
+                Q005.Visibility = Visibility.Hidden;
+
+                //change grid
+
+                Grid.SetRow(lbQ10, 4);
+                Grid.SetRow(lbFQ10, 4);
+                Grid.SetRow(Q01, 4);
+                Grid.SetRow(lbwTQ10, 4);
+                Grid.SetRow(lbwFQ10, 4);
+
+                Grid.SetRow(lbQm, 5);
+                Grid.SetRow(lbFQm, 5);
+                Grid.SetRow(Qmin, 5);
+                Grid.SetRow(lbwTQm, 5);
+                Grid.SetRow(lbwFQm, 5);
+
+                Animation.AnimateWindowHeight(window, 492, false);
+                Animation.AnimateGroupBoxHeight(gbErrors, 282, false);
+                Animation.AnimateGroupBoxHeight(gbQi, 282, false);
                 //window.Height = 555;
+            }
+
+            else if (Convert.ToString(comboBoxR.SelectedItem) == "30:1")
+            {
+                // hide labels forom GroupBox Errors
+
+                lbQ15.Visibility = Visibility.Hidden;
+                lbFQ15.Visibility = Visibility.Hidden;
+
+                // hide labels from GroupBox QiQmax
+
+                lbwTQ15.Visibility = Visibility.Hidden;
+                lbwFQ15.Visibility = Visibility.Hidden;
+
+                //hide textbox
+
+                Q015.Visibility = Visibility.Hidden;
+
+                //change grid
+
+                Grid.SetRow(lbQ10, 4);
+                Grid.SetRow(lbFQ10, 4);
+                Grid.SetRow(Q01, 4);
+                Grid.SetRow(lbwTQ10, 4);
+                Grid.SetRow(lbwFQ10, 4);
+
+                Grid.SetRow(lbQ05, 5);
+                Grid.SetRow(lbFQ05, 5);
+                Grid.SetRow(Q005, 5);
+                Grid.SetRow(lbwTQ05, 5);
+                Grid.SetRow(lbwFQ05, 5);
+
+                Grid.SetRow(lbQm, 6);
+                Grid.SetRow(lbFQm, 6);
+                Grid.SetRow(Qmin, 6);
+                Grid.SetRow(lbwTQm, 6);
+                Grid.SetRow(lbwFQm, 6);
+
+                Animation.AnimateWindowHeight(window, 529, false);
+                Animation.AnimateGroupBoxHeight(gbErrors, 319, false);
+                Animation.AnimateGroupBoxHeight(gbQi, 319, false);
+
+            }
+            else
+            {
+                // hide labels forom GroupBox Errors
+
+                lbQ04.Visibility = Visibility.Hidden;
+                lbFQ04.Visibility = Visibility.Hidden;
+                lbQ10.Visibility = Visibility.Hidden;
+                lbFQ10.Visibility = Visibility.Hidden;
+
+                // hide labels from GroupBox QiQmax
+
+                lbwTQ04.Visibility = Visibility.Hidden;
+                lbwFQ04.Visibility = Visibility.Hidden;
+                lbwTQ10.Visibility = Visibility.Hidden;
+                lbwFQ10.Visibility = Visibility.Hidden;
+
+                //hide textbox
+
+                Q04.Visibility = Visibility.Hidden;
+                Q01.Visibility = Visibility.Hidden;
+
+                //change grid
+
+                Grid.SetRow(lbQ25, 2);
+                Grid.SetRow(lbFQ25, 2);
+                Grid.SetRow(Q025, 2);
+                Grid.SetRow(lbwTQ25, 2);
+                Grid.SetRow(lbwFQ25, 2);
+
+                Grid.SetRow(lbQ15, 3);
+                Grid.SetRow(lbFQ15, 3);
+                Grid.SetRow(Q015, 3);
+                Grid.SetRow(lbwTQ15, 3);
+                Grid.SetRow(lbwFQ15, 3);
+
+                Grid.SetRow(lbQ05, 4);
+                Grid.SetRow(lbFQ05, 4);
+                Grid.SetRow(Q005, 4);
+                Grid.SetRow(lbwTQ05, 4);
+                Grid.SetRow(lbwFQ05, 4);
+
+                Grid.SetRow(lbQm, 5);
+                Grid.SetRow(lbFQm, 5);
+                Grid.SetRow(Qmin, 5);
+                Grid.SetRow(lbwTQm, 5);
+                Grid.SetRow(lbwFQm, 5);
+
+                Animation.AnimateWindowHeight(window, 492, false);
+                Animation.AnimateGroupBoxHeight(gbErrors, 282, false);
+                Animation.AnimateGroupBoxHeight(gbQi, 282, false);
             }
         }
 
@@ -603,6 +729,86 @@ namespace WMECalculation
             Q01.Clear();
             Q005.Clear();
             Qmin.Clear();
+
+            // -- labels reset visibility gorupbox Errors
+
+            lbQ04.Visibility = Visibility.Visible;
+            lbFQ04.Visibility = Visibility.Visible;
+            lbQ25.Visibility = Visibility.Visible;
+            lbFQ25.Visibility = Visibility.Visible;
+            lbQ15.Visibility = Visibility.Visible;
+            lbFQ15.Visibility = Visibility.Visible;
+            lbQ10.Visibility = Visibility.Visible;
+            lbFQ10.Visibility = Visibility.Visible;
+            lbQ05.Visibility = Visibility.Visible;
+            lbFQ05.Visibility = Visibility.Visible;
+
+            // --- labels reset visibility groupbox Qi/Qmax
+            lbwTQ04.Visibility = Visibility.Visible;
+            lbwFQ04.Visibility = Visibility.Visible;
+            lbwTQ25.Visibility = Visibility.Visible;
+            lbwFQ25.Visibility = Visibility.Visible;
+            lbwTQ15.Visibility = Visibility.Visible;
+            lbwFQ15.Visibility = Visibility.Visible;
+            lbwTQ10.Visibility = Visibility.Visible;
+            lbwFQ10.Visibility = Visibility.Visible;
+            lbwTQ05.Visibility = Visibility.Visible;
+            lbwFQ05.Visibility = Visibility.Visible;
+
+            // --- textbos reset
+            Q04.Visibility = Visibility.Visible;
+            Q015.Visibility = Visibility.Visible;
+            Q01.Visibility = Visibility.Visible;
+            Q005.Visibility = Visibility.Visible;
+
+            // -- reset posirions all Q04
+
+            Grid.SetRow(lbQ04, 2);
+            Grid.SetRow(lbFQ04, 2);
+            Grid.SetRow(Q04, 2);
+            Grid.SetRow(lbwTQ04, 2);
+            Grid.SetRow(lbwFQ04, 2);
+
+            // -- reset posirions all Q025
+
+            Grid.SetRow(lbQ25, 3);
+            Grid.SetRow(lbFQ25, 3);
+            Grid.SetRow(Q025, 3);
+            Grid.SetRow(lbwTQ25, 3);
+            Grid.SetRow(lbwFQ25, 3);
+
+            // -- reset posirions all Q015
+
+            Grid.SetRow(lbQ15, 4);
+            Grid.SetRow(lbFQ15, 4);
+            Grid.SetRow(Q015, 4);
+            Grid.SetRow(lbwTQ15, 4);
+            Grid.SetRow(lbwFQ15, 4);
+
+            // -- reset posirions all Q010
+
+            Grid.SetRow(lbQ10, 5);
+            Grid.SetRow(lbFQ10, 5);
+            Grid.SetRow(Q01, 5);
+            Grid.SetRow(lbwTQ10, 5);
+            Grid.SetRow(lbwFQ10, 5);
+
+            // -- reset posirions all Q005
+
+            Grid.SetRow(lbQ05, 6);
+            Grid.SetRow(lbFQ05, 6);
+            Grid.SetRow(Q005, 6);
+            Grid.SetRow(lbwTQ05, 6);
+            Grid.SetRow(lbwFQ05, 6);
+
+            // --- reset positions all qmin
+
+            Grid.SetRow(lbQm, 7);
+            Grid.SetRow(lbFQm, 7);
+            Grid.SetRow(Qmin, 7);
+            Grid.SetRow(lbwTQm, 7);
+            Grid.SetRow(lbwFQm, 7);
+            
             lbResult.Content = "0,00";
             window.Height = 555;
         }
