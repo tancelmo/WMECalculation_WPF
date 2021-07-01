@@ -160,18 +160,8 @@ namespace WMECalculation
             }
             else
             {
-                
-                var currentTheme = readIni.Read("Theme");
 
-                if (currentTheme == "Light")
-                {
-                    lbResult.Foreground = Brushes.Black;
-                }
-                else
-                {
-
-                    lbResult.Foreground = Brushes.White;
-                }
+                lbResult.ClearValue(Control.ForegroundProperty);
 
             }
         }

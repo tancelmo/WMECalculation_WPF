@@ -810,6 +810,7 @@ namespace WMECalculation
             Grid.SetRow(lbwFQm, 7);
             
             lbResult.Content = "0,00";
+            lbResult.ClearValue(Control.ForegroundProperty);
             window.Height = 555;
         }
     }
