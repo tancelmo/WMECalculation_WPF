@@ -9,8 +9,6 @@
         WindowStartupLocation="CenterScreen"
         Style="{DynamicResource CustomWindowStyle}"
         Title="{DynamicResource Tittle}" ResizeMode="CanMinimize">
-
-
     <Window.CommandBindings>
         <CommandBinding Command="New" CanExecute="menuCorrection_Click"/>
     </Window.CommandBindings>

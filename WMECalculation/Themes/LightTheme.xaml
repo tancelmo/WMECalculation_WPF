@@ -3931,6 +3931,7 @@
                                                    Themes:SystemDropShadowChrome.CornerRadius="0" 
                                                    SnapsToDevicePixels="True">
                         <Border Name="Border"
+                                CornerRadius="5"
                                 SnapsToDevicePixels="True"
                                 BorderThickness="1"
                                 Background="{TemplateBinding Background}"
@@ -4016,11 +4017,11 @@
         <Setter Property="Foreground" Value="{StaticResource ControlDefaultForeground}"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="ResizeMode" Value="CanResizeWithGrip"/>
-        <Setter Property="WindowStyle" Value="None"/>
+        <Setter Property="WindowStyle" Value="SingleBorderWindow"/>
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome CaptionHeight="200"
-
+                              GlassFrameThickness="1"  
                               UseAeroCaptionButtons="False"/>
             </Setter.Value>
 
@@ -4211,7 +4212,7 @@
             <Trigger Property="IsPressed" Value="true">
                 <Setter Property="Background" TargetName="border" Value="{StaticResource ControlSelectedBackground}"/>
                 <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource ControlSelectedBackground}"/>
-                <Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="white"/>
+                <!--<Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="white"/>-->
 
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">

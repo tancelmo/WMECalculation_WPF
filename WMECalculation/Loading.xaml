@@ -8,9 +8,7 @@
         Style="{DynamicResource LoadingPage}"
         WindowStartupLocation="CenterScreen"
         Title="{DynamicResource Loading}" Height="200" Width="450"
-        ResizeMode="NoResize"
-        Background="Transparent"
-        AllowsTransparency="True" Opacity="0.95">
+        ResizeMode="NoResize">
     <!--<Window.Effect>
         <DropShadowEffect Color="Black" BlurRadius="5" RenderingBias="Quality" ShadowDepth="2"/>
     </Window.Effect>-->

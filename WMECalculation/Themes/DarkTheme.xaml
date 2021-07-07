@@ -4593,6 +4593,7 @@
                                                    Themes:SystemDropShadowChrome.CornerRadius="0" 
                                                    SnapsToDevicePixels="True">
                         <Border Name="Border"
+                                CornerRadius="5"
                                 SnapsToDevicePixels="True"
                                 BorderThickness="1"
                                 Background="{TemplateBinding Background}"
@@ -4668,7 +4669,9 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-
+    <Style x:Key="MaximizeButtonStyle" TargetType="Button" BasedOn="{StaticResource CaptionButtonStyle}">
+        <Setter Property="Content" Value="&#xE739;"/>
+    </Style>
     <!-- Custom Window style (unaffected by win32 style stuff) -->
 
     <Style x:Key="CustomWindowStyle" TargetType="{x:Type Window}">
