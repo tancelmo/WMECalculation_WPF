@@ -22,6 +22,8 @@ namespace WMECalculation
         {
             InitializeComponent();
 
+            
+            ///
             /// 1 instance
             /// 
 
@@ -241,6 +243,11 @@ namespace WMECalculation
         private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
         {
 
+        }
+
+        private void Label_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
     }
 }

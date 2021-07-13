@@ -30,7 +30,7 @@
                 <TextBlock FontWeight="{x:Static SystemFonts.MessageFontWeight}" FontFamily="{x:Static SystemFonts.CaptionFontFamily}" FontSize="{x:Static SystemFonts.IconFontSize}" Text="{DynamicResource Close}"/>
             </ToolTipService.ToolTip>
         </Button>
-        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource CustomLabelTitle}" Content="{Binding Title,RelativeSource={RelativeSource FindAncestor,AncestorType=Window}}" Width="auto" Height="28" HorizontalAlignment="Center" VerticalAlignment="top" Margin="0,5,0,0"/>
+        <Label HorizontalContentAlignment="Center" FontSize="13" VerticalContentAlignment="Center" Style="{DynamicResource CustomLabelTitle}" Content="{Binding Title,RelativeSource={RelativeSource FindAncestor,AncestorType=Window}}" Width="auto" Height="28" HorizontalAlignment="Center" VerticalAlignment="top" Margin="0,5,0,0"/>
         <Image Name="gears1" Source="Assets/Images/32_40.png" Width="32" Height="32" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,40,0,0"/>
         <Label Name="arrow" FontFamily="Assets/Fonts/#Segoe MDL2 Assets" Content="&#xF0AF;" FontSize="20" Width="32" Height="32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,40,0,0"/>
         <Image Name="gears2" Source="Assets/Images/32_40.png" Width="32" Height="32" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="160,40,0,0"/>
@@ -40,13 +40,13 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Label Content="{DynamicResource currentGears}" Margin="5,5,0,0" Height="30" VerticalAlignment="Top" FontSize="13" />
-            <ComboBox MouseEnter="cbCurrentGears_MouseEnter" SelectionChanged="cbCurrentGears_SelectionChanged" Name="cbCurrentGears" Width="120" Height="25" Margin="10,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <ComboBox MouseEnter="cbCurrentGears_MouseEnter" FontSize="13" SelectionChanged="cbCurrentGears_SelectionChanged" Name="cbCurrentGears" Width="120" Height="25" Margin="10,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
             <Label Content="{DynamicResource newGears}" Margin="5,58,0,0" Height="30" VerticalAlignment="Top" FontSize="13"/>
-            <ComboBox MouseEnter="cbNewGears_MouseEnter" SelectionChanged="cbNewGears_SelectionChanged" Name="cbNewGears" Width="120" Height="25" Margin="10,83,0,10" HorizontalAlignment="Left"/>
-            <GroupBox Header="{DynamicResource percentCorrection}" Grid.Column="1" Width="110" HorizontalAlignment="Right" Margin="0,9,10,40">
+            <ComboBox MouseEnter="cbNewGears_MouseEnter" FontSize="13" SelectionChanged="cbNewGears_SelectionChanged" Name="cbNewGears" Width="120" Height="25" Margin="10,83,0,10" HorizontalAlignment="Left"/>
+            <GroupBox Header="{DynamicResource percentCorrection}" FontSize="13" Grid.Column="1" Width="110" HorizontalAlignment="Right" Margin="0,9,10,40">
                 <Label Name="lbCalcGears" Content="0,00 %" HorizontalAlignment="Center" FontSize="16"/>
             </GroupBox>
-            <Button Name="btnCalculate" Click="btnCalculate_Click" Content="{DynamicResource btnCalculate}" Grid.Column="1" Width="110" HorizontalAlignment="Right" Height="25" Margin="0,83,10,10"/>
+            <Button Name="btnCalculate" Click="btnCalculate_Click" FontSize="13" Content="{DynamicResource btnCalculate}" Grid.Column="1" Width="110" HorizontalAlignment="Right" Height="25" Margin="0,83,10,10"/>
         </Grid>
     </Grid>
 </Window>

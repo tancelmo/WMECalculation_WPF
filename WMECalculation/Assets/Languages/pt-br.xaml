@@ -50,6 +50,7 @@
     <TextBlock x:Key="percentCorrection" Text="% Correção"/>
     <TextBlock x:Key="btnCalculate" Text="Calcular"/>
     <TextBlock x:Key="lbEngine" Text="Checando Access Database Engine..."/>
+    <TextBlock x:Key="WIP" Text="Em Progresso"/>
     
 
 

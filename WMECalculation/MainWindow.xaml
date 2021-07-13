@@ -8,7 +8,8 @@
         Width="320" Height="565"
         WindowStartupLocation="CenterScreen"
         Style="{DynamicResource CustomWindowStyle}"
-        Title="{DynamicResource Tittle}" ResizeMode="CanMinimize">
+        Title="{DynamicResource Tittle}"
+        ResizeMode="CanMinimize">
     <Window.CommandBindings>
         <CommandBinding Command="New" CanExecute="menuCorrection_Click"/>
     </Window.CommandBindings>
@@ -53,13 +54,13 @@
                 Click="btnClose_Click"
                 KeyboardNavigation.IsTabStop="False">
             <ToolTipService.ToolTip>
-                <TextBlock FontWeight="{x:Static SystemFonts.MessageFontWeight}" FontFamily="{x:Static SystemFonts.CaptionFontFamily}" FontSize="{x:Static SystemFonts.IconFontSize}" Text="{DynamicResource Close}"/>
+                <TextBlock FontWeight="{x:Static SystemFonts.MessageFontWeight}" FontFamily="{x:Static SystemFonts.CaptionFontFamily}" FontSize="{x:Static SystemFonts.IconFontSize}" Text="{DynamicResource Close}"></TextBlock>
             </ToolTipService.ToolTip>
         </Button>
-        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource CustomLabelTitle}" Content="{Binding Title,RelativeSource={RelativeSource FindAncestor,AncestorType=Window}}" Width="auto" Height="25" HorizontalAlignment="Center" VerticalAlignment="top" Margin="0,5,0,0"/>
-        <Menu WindowChrome.IsHitTestVisibleInChrome="True" Height="20" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,8,0,0" >
+        <Label HorizontalContentAlignment="Center" FontSize="13" VerticalContentAlignment="Center" Style="{DynamicResource CustomLabelTitle}" Content="{Binding Title,RelativeSource={RelativeSource FindAncestor,AncestorType=Window}}" ToolTip="{DynamicResource Tittle}" WindowChrome.IsHitTestVisibleInChrome="True" MouseDown="Label_MouseDown" Width="auto" Height="28" HorizontalAlignment="Center" VerticalAlignment="top" Margin="0,5,0,0"/>
+        <Menu WindowChrome.IsHitTestVisibleInChrome="True" Height="25" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,8,0,0" >
 
-            <MenuItem KeyboardNavigation.IsTabStop="False" Header="{DynamicResource Options}">
+            <MenuItem KeyboardNavigation.IsTabStop="False" Height="25" FontSize="13" Header="{DynamicResource Options}">
                 <!--heith-->
                 <MenuItem Name="menuLang" Height="30" Header="{DynamicResource Language}" Template="{DynamicResource DropDownMenuItemStyle}">
                     <MenuItem.Icon>
@@ -67,7 +68,7 @@
                     </MenuItem.Icon>
                     <MenuItem Name="menuEn" Height="30"  Click="MenuEn_Click" Header="{DynamicResource English}" Template="{DynamicResource SingleDropDownMenuItem}"/>
                     <MenuItem Name="menuPt" Height="30"  Click="MenuPt_Click" Header="{DynamicResource Portuguese}" Template="{DynamicResource SingleDropDownMenuItem}"/>
-                    <MenuItem Height="30"  Header="{DynamicResource Spanish}" Template="{DynamicResource SingleDropDownMenuItem}"/>
+                    <MenuItem Height="30" ToolTip="{DynamicResource WIP}" Header="{DynamicResource Spanish}" Template="{DynamicResource SingleDropDownMenuItem}"/>
                 </MenuItem>
 
                 <MenuItem Name="menuTheme" Height="30" Header="{DynamicResource Theme}" Template="{DynamicResource DropDownMenuItemStyle}">
@@ -100,10 +101,10 @@
 
             </MenuItem>
         </Menu>
-        <Label Content="{DynamicResource GSize}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,40"/>
-        <ComboBox MouseEnter="comboBoxG_MouseEnter" Name="comboBoxG" SelectionChanged="comboBoxG_SelectionChanged" Height="25" Width="82" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,70"/>
-        <Label Content="{DynamicResource Range}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="104,40,0,0"/>
-        <ComboBox MouseEnter="comboBoxR_MouseEnter" Name="comboBoxR" SelectionChanged="comboBoxR_SelectionChanged" Height="25" Width="60" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="108,70,0,0"/>
+        <Label Content="{DynamicResource GSize}" HorizontalAlignment="Left" FontSize="13" VerticalAlignment="Top" Margin="10,40"/>
+        <ComboBox MouseEnter="comboBoxG_MouseEnter" Name="comboBoxG" FontSize="13" SelectionChanged="comboBoxG_SelectionChanged" Height="25" Width="82" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,70"/>
+        <Label Content="{DynamicResource Range}" HorizontalAlignment="Left" FontSize="13" VerticalAlignment="Top" Margin="104,40,0,0"/>
+        <ComboBox MouseEnter="comboBoxR_MouseEnter" Name="comboBoxR" FontSize="13" SelectionChanged="comboBoxR_SelectionChanged" Height="25" Width="60" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="108,70,0,0"/>
 
         <Button x:Name="btnClear"
                 UseLayoutRounding="True"
@@ -134,15 +135,15 @@
 
 
 
-        <GroupBox Header="{DynamicResource Formula}" Height="78" Width="154" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,105,0,0">
+        <GroupBox Header="{DynamicResource Formula}" FontSize="13" Height="78" Width="154" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,105,0,0">
             <Image Name="img" Source="Assets/Images/wmecen_black_en.png"/>
         </GroupBox>
-        <GroupBox Header="{DynamicResource Result}" Height="78" Width="123" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,105,0,0">
+        <GroupBox Header="{DynamicResource Result}" FontSize="13" Height="78" Width="123" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,105,0,0">
             <StackPanel Margin="0,-4,0,0">
                 <Label x:Name="lbResult" Content="0,00" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontWeight="Bold" FontFamily="Arial" FontStyle="Italic" RenderTransformOrigin="0.509,0.023"/>
             </StackPanel>
         </GroupBox>
-        <GroupBox Name="gbErros" IsEnabled="False" Header="{DynamicResource Errors}" Height="355" Width="155" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,191,0,0">
+        <GroupBox Name="gbErros" FontSize="13" IsEnabled="False" Header="{DynamicResource Errors}" Height="355" Width="155" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,191,0,0">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
@@ -166,28 +167,28 @@
                 <TextBox HorizontalContentAlignment="Right" Grid.Column="1" Grid.Row="5" Name="Q010" KeyDown="Q010_KeyDown" LostFocus="Q010_LostFocus" MaxLength="5" FontSize="20" Width="53" Height="31" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0"/>
                 <TextBox HorizontalContentAlignment="Right" Grid.Column="1" Grid.Row="6" Name="Q005" KeyDown="Q005_KeyDown" LostFocus="Q005_LostFocus" MaxLength="5" FontSize="20" Width="53" Height="31" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0"/>
                 <TextBox HorizontalContentAlignment="Right" Grid.Column="1" Grid.Row="7" Name="Qm" KeyDown="Qm_KeyDown" LostFocus="Qm_LostFocus" MaxLength="5" FontSize="20" Width="53" Height="31" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0"/>
-                <Label Content="Qmax" HorizontalContentAlignment="Right" Grid.Row="0" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
+                <Label Content="Qmax" FontSize="12" HorizontalContentAlignment="Right" Grid.Row="0" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
                 <Label Name="lbFQmax" Content="????? m³/h" Foreground="{DynamicResource flowColor}" HorizontalContentAlignment="Right" Grid.Row="0" Grid.Column="0" Margin="0,13,0,0" FontStyle="Italic" FontSize="12" FontWeight="Bold"/>
-                <Label Content="0,70 Qmax" HorizontalContentAlignment="Right" Grid.Row="1" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
+                <Label Content="0,70 Qmax" FontSize="12" HorizontalContentAlignment="Right" Grid.Row="1" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
                 <Label Name="lbFQ07" Content="????? m³/h" Foreground="{DynamicResource flowColor}" HorizontalContentAlignment="Right" Grid.Row="1" Grid.Column="0" Margin="0,13,0,0" FontStyle="Italic" FontSize="12" FontWeight="Bold"/>
-                <Label Name="lbQ04" Content="0,40 Qmax" HorizontalContentAlignment="Right" Grid.Row="2" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
+                <Label Name="lbQ04" FontSize="12" Content="0,40 Qmax" HorizontalContentAlignment="Right" Grid.Row="2" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
                 <Label Name="lbFQ04" Content="????? m³/h" Foreground="{DynamicResource flowColor}" HorizontalContentAlignment="Right" Grid.Row="2" Grid.Column="0" Margin="0,13,0,0" FontStyle="Italic" FontSize="12" FontWeight="Bold"/>
-                <Label Name="lbQ25" Content="0,25 Qmax" HorizontalContentAlignment="Right" Grid.Row="3" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
+                <Label Name="lbQ25" FontSize="12" Content="0,25 Qmax" HorizontalContentAlignment="Right" Grid.Row="3" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
                 <Label Name="lbFQ25" Content="????? m³/h" Foreground="{DynamicResource flowColor}" HorizontalContentAlignment="Right" Grid.Row="3" Grid.Column="0" Margin="0,13,0,0" FontStyle="Italic" FontSize="12" FontWeight="Bold"/>
-                <Label Name="lbQ15" Content="0,15 Qmax" HorizontalContentAlignment="Right" Grid.Row="4" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
+                <Label Name="lbQ15" FontSize="12" Content="0,15 Qmax" HorizontalContentAlignment="Right" Grid.Row="4" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
                 <Label Name="lbFQ15" Content="????? m³/h" Foreground="{DynamicResource flowColor}" HorizontalContentAlignment="Right" Grid.Row="4" Grid.Column="0" Margin="0,13,0,0" FontStyle="Italic" FontSize="12" FontWeight="Bold"/>
-                <Label Name="lbQ10" Content="0,10 Qmax" HorizontalContentAlignment="Right" Grid.Row="5" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
+                <Label Name="lbQ10" FontSize="12" Content="0,10 Qmax" HorizontalContentAlignment="Right" Grid.Row="5" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
                 <Label Name="lbFQ10" Content="????? m³/h" Foreground="{DynamicResource flowColor}" HorizontalContentAlignment="Right" Grid.Row="5" Grid.Column="0" Margin="0,13,0,0" FontStyle="Italic" FontSize="12" FontWeight="Bold"/>
-                <Label Name="lbQ05" Content="0,05 Qmax" HorizontalContentAlignment="Right" Grid.Row="6" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
+                <Label Name="lbQ05" FontSize="12" Content="0,05 Qmax" HorizontalContentAlignment="Right" Grid.Row="6" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
                 <Label Name="lbFQ05" Content="????? m³/h" Foreground="{DynamicResource flowColor}" HorizontalContentAlignment="Right" Grid.Row="6" Grid.Column="0" Margin="0,13,0,0" FontStyle="Italic" FontSize="12" FontWeight="Bold"/>
-                <Label Name="lbQm" Content="Qmin" HorizontalContentAlignment="Right" Grid.Row="7" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
+                <Label Name="lbQm" FontSize="12" Content="Qmin" HorizontalContentAlignment="Right" Grid.Row="7" Grid.Column="0" Margin="0,0,0,0" FontWeight="Bold"/>
                 <Label Name="lbFQm" Content="????? m³/h" Foreground="{DynamicResource flowColor}" HorizontalContentAlignment="Right" Grid.Row="7" Grid.Column="0" Margin="0,13,0,0" FontStyle="Italic" FontSize="12" FontWeight="Bold"/>
 
             </Grid>
 
 
         </GroupBox>
-        <GroupBox Name="gbQi" IsEnabled="False" Header="{DynamicResource Qi}" Height="355" Width="123" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,191,0,0">
+        <GroupBox Name="gbQi" IsEnabled="False" FontSize="13" Header="{DynamicResource Qi}" Height="355" Width="123" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,191,0,0">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>

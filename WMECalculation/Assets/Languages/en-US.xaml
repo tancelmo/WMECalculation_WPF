@@ -46,6 +46,7 @@
     <system:String x:Key="NoGSize">No G Size selected.</system:String>
     <system:String x:Key="ClearCorrection">Clear correction</system:String>
     <system:String x:Key="InstanceApp">Application already open.</system:String>
+    <TextBlock x:Key="WIP" Text="WIP"/>
 
 
 
