@@ -13,7 +13,7 @@
         <DropShadowEffect Color="Black" BlurRadius="5" RenderingBias="Quality" ShadowDepth="2"/>
     </Window.Effect>-->
     <Grid Background="AliceBlue">
-        <Image Source="Assets/Images/splash.png"/>
+        <Image Source="pack://application:,,,/Assets/Images/splash.png"/>
         <Label Name="lbInit" x:FieldModifier="public" Content="{DynamicResource Starting}" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,5,5"/>
         <Label Name="CheckFiles" Visibility="Hidden" x:FieldModifier="public" Content="{DynamicResource CheckFiles}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,0,0,5"/>
         <Label Name="InitConnections" Visibility="Hidden" x:FieldModifier="public" Content="{DynamicResource InitConnections}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,0,0,5"/>

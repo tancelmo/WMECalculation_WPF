@@ -1,0 +1,36 @@
+﻿<Window x:Class="WMECalculation.View.FormulaInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WMECalculation.View"
+        mc:Ignorable="d"
+        Style="{DynamicResource CustomWindowStyle}"
+        Title="{DynamicResource FormulaInfo}"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
+        Height="450" Width="800">
+    <Grid>
+        <Button x:Name="btnClose"
+                UseLayoutRounding="True"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Height="30"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                Template="{DynamicResource CloseWindowButton}"
+                Width="45"
+                WindowChrome.IsHitTestVisibleInChrome="True"                      
+                FontFamily="pack://application:,,,/Assets/Fonts/#Segoe MDL2 Assets"
+                FontSize="10"
+                Content="&#xE8BB;"
+                Click="btnClose_Click"
+                KeyboardNavigation.IsTabStop="False">
+            <ToolTipService.ToolTip>
+                <TextBlock FontWeight="{x:Static SystemFonts.MessageFontWeight}" FontFamily="{x:Static SystemFonts.CaptionFontFamily}" FontSize="13" Text="{DynamicResource Close}"></TextBlock>
+            </ToolTipService.ToolTip>
+        </Button>
+        <Label HorizontalContentAlignment="Center" FontSize="13" VerticalContentAlignment="Center" Style="{DynamicResource CustomLabelTitle}" Content="{Binding Title,RelativeSource={RelativeSource FindAncestor,AncestorType=Window}}" Width="auto" Height="28" HorizontalAlignment="Center" VerticalAlignment="top" Margin="0,5,0,0"/>
+        <Image Source="pack://application:,,,/Assets/Images/wmeinfo_white_en.png" Stretch="None"/>
+    </Grid>
+</Window>

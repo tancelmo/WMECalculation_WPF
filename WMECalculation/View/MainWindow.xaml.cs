@@ -3,6 +3,7 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using WMECalculation.View;
 
 /// <summary>
 /// ToDo Resize Form
@@ -245,9 +246,21 @@ namespace WMECalculation
 
         }
 
-        private void Label_MouseDown(object sender, MouseButtonEventArgs e)
+        private void menuAbout_Click(object sender, RoutedEventArgs e)
         {
-            this.DragMove();
+            About about = new About();
+            about.ShowDialog();
+        }
+
+        private void img_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            FormulaInfo formulaInfo = new FormulaInfo();
+            formulaInfo.ShowDialog();
+        }
+
+        private void Label_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
         }
     }
 }

@@ -28,14 +28,14 @@
                 Height="30"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
-                FontFamily="Assets/Fonts/#Segoe MDL2 Assets" 
+                FontFamily="pack://application:,,,/Assets/Fonts/#Segoe MDL2 Assets" 
                 FontSize="10"
                 Content="&#xE921;"
                 Margin="0,0,45,0"
                 Click="btnMinimize_Click"
                 KeyboardNavigation.IsTabStop="False">
             <ToolTipService.ToolTip>
-                <TextBlock FontWeight="{x:Static SystemFonts.MessageFontWeight}" FontFamily="{x:Static SystemFonts.CaptionFontFamily}" FontSize="{x:Static SystemFonts.IconFontSize}" Text="{DynamicResource Minimize}"/>
+                <TextBlock FontWeight="{x:Static SystemFonts.MessageFontWeight}" FontFamily="{x:Static SystemFonts.CaptionFontFamily}" FontSize="13" Text="{DynamicResource Minimize}"/>
             </ToolTipService.ToolTip>
         </Button>
         <Button x:Name="btnClose"
@@ -48,23 +48,23 @@
                 Template="{DynamicResource CloseWindowButton}"
                 Width="45"
                 WindowChrome.IsHitTestVisibleInChrome="True"                      
-                FontFamily="Assets/Fonts/#Segoe MDL2 Assets"
+                FontFamily="pack://application:,,,/Assets/Fonts/#Segoe MDL2 Assets"
                 FontSize="10"
                 Content="&#xE8BB;"
                 Click="btnClose_Click"
                 KeyboardNavigation.IsTabStop="False">
             <ToolTipService.ToolTip>
-                <TextBlock FontWeight="{x:Static SystemFonts.MessageFontWeight}" FontFamily="{x:Static SystemFonts.CaptionFontFamily}" FontSize="{x:Static SystemFonts.IconFontSize}" Text="{DynamicResource Close}"></TextBlock>
+                <TextBlock FontWeight="{x:Static SystemFonts.MessageFontWeight}" FontFamily="{x:Static SystemFonts.CaptionFontFamily}" FontSize="13" Text="{DynamicResource Close}"></TextBlock>
             </ToolTipService.ToolTip>
         </Button>
-        <Label HorizontalContentAlignment="Center" FontSize="13" VerticalContentAlignment="Center" Style="{DynamicResource CustomLabelTitle}" Content="{Binding Title,RelativeSource={RelativeSource FindAncestor,AncestorType=Window}}" ToolTip="{DynamicResource Tittle}" WindowChrome.IsHitTestVisibleInChrome="True" MouseDown="Label_MouseDown" Width="auto" Height="28" HorizontalAlignment="Center" VerticalAlignment="top" Margin="0,5,0,0"/>
+        <Label HorizontalContentAlignment="Center" FontSize="13" VerticalContentAlignment="Center" Style="{DynamicResource CustomLabelTitle}" Content="{Binding Title,RelativeSource={RelativeSource FindAncestor,AncestorType=Window}}" ToolTip="{DynamicResource Tittle}" WindowChrome.IsHitTestVisibleInChrome="True" MouseLeftButtonDown="Label_MouseLeftButtonDown" Width="auto" Height="28" HorizontalAlignment="Center" VerticalAlignment="top" Margin="0,5,0,0"/>
         <Menu WindowChrome.IsHitTestVisibleInChrome="True" Height="25" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,8,0,0" >
 
             <MenuItem KeyboardNavigation.IsTabStop="False" Height="25" FontSize="13" Header="{DynamicResource Options}">
                 <!--heith-->
                 <MenuItem Name="menuLang" Height="30" Header="{DynamicResource Language}" Template="{DynamicResource DropDownMenuItemStyle}">
                     <MenuItem.Icon>
-                        <TextBlock x:Name="iconLanguage" Text="&#xF2B7;" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Assets/Fonts/#Segoe MDL2 Assets"/>
+                        <TextBlock x:Name="iconLanguage" Text="&#xF2B7;" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="pack://application:,,,/Assets/Fonts/#Segoe MDL2 Assets"/>
                     </MenuItem.Icon>
                     <MenuItem Name="menuEn" Height="30"  Click="MenuEn_Click" Header="{DynamicResource English}" Template="{DynamicResource SingleDropDownMenuItem}"/>
                     <MenuItem Name="menuPt" Height="30"  Click="MenuPt_Click" Header="{DynamicResource Portuguese}" Template="{DynamicResource SingleDropDownMenuItem}"/>
@@ -73,38 +73,38 @@
 
                 <MenuItem Name="menuTheme" Height="30" Header="{DynamicResource Theme}" Template="{DynamicResource DropDownMenuItemStyle}">
                     <MenuItem.Icon>
-                        <TextBlock x:Name="iconTheme" Text="&#xE790;" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Assets/Fonts/#Segoe MDL2 Assets"/>
+                        <TextBlock x:Name="iconTheme" Text="&#xE790;" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="pack://application:,,,/Assets/Fonts/#Segoe MDL2 Assets"/>
                     </MenuItem.Icon>
                     <MenuItem Name="menuLight" Height="30"  Click="MenuLight_Click" Header="Light" Template="{DynamicResource SingleDropDownMenuItem}">
                         <MenuItem.Icon>
-                            <TextBlock x:Name="iconLight" Text="&#xE706;" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Assets/Fonts/#Segoe MDL2 Assets"/>
+                            <TextBlock x:Name="iconLight" Text="&#xE706;" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="pack://application:,,,/Assets/Fonts/#Segoe MDL2 Assets"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Name="menuDark" Height="30" Click="MenuDark_Click" Header="Dark" Template="{DynamicResource SingleDropDownMenuItem}">
                         <MenuItem.Icon>
-                            <TextBlock x:Name="iconDark" Text="&#xE708;" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Assets/Fonts/#Segoe MDL2 Assets"/>
+                            <TextBlock x:Name="iconDark" Text="&#xE708;" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="pack://application:,,,/Assets/Fonts/#Segoe MDL2 Assets"/>
                         </MenuItem.Icon>
                     </MenuItem>
                 </MenuItem>
 
                 <MenuItem Name="menuCorrection" Click="menuCorrection_Click" Height="30" Header="{DynamicResource Correction}" InputGestureText="F5" Template="{DynamicResource SingleDropDownMenuItem}">
                     <MenuItem.Icon>
-                        <TextBlock x:Name="iconCorrection" Text="&#xE9F5;" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Assets/Fonts/#Segoe MDL2 Assets"/>
+                        <TextBlock x:Name="iconCorrection" Text="&#xE9F5;" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="pack://application:,,,/Assets/Fonts/#Segoe MDL2 Assets"/>
                     </MenuItem.Icon>
                 </MenuItem>
 
-                <MenuItem Name="menuAbout" Click="menuCorrection_Click" Height="30" Header="{DynamicResource About}" Template="{DynamicResource SingleDropDownMenuItem}">
+                <MenuItem Name="menuAbout" Click="menuAbout_Click" Height="30" Header="{DynamicResource About}" Template="{DynamicResource SingleDropDownMenuItem}">
                     <MenuItem.Icon>
-                        <TextBlock x:Name="iconAbout" Text="&#xE946;" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Assets/Fonts/#Segoe MDL2 Assets"/>
+                        <TextBlock x:Name="iconAbout" Text="&#xE946;" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="pack://application:,,,/Assets/Fonts/#Segoe MDL2 Assets"/>
                     </MenuItem.Icon>
                 </MenuItem>
 
             </MenuItem>
         </Menu>
         <Label Content="{DynamicResource GSize}" HorizontalAlignment="Left" FontSize="13" VerticalAlignment="Top" Margin="10,40"/>
-        <ComboBox MouseEnter="comboBoxG_MouseEnter" Name="comboBoxG" FontSize="13" SelectionChanged="comboBoxG_SelectionChanged" Height="25" Width="82" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,70"/>
+        <ComboBox MouseEnter="comboBoxG_MouseEnter" ToolTip="{DynamicResource cbxG}" Name="comboBoxG" FontSize="13" SelectionChanged="comboBoxG_SelectionChanged" Height="25" Width="82" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,70"/>
         <Label Content="{DynamicResource Range}" HorizontalAlignment="Left" FontSize="13" VerticalAlignment="Top" Margin="104,40,0,0"/>
-        <ComboBox MouseEnter="comboBoxR_MouseEnter" Name="comboBoxR" FontSize="13" SelectionChanged="comboBoxR_SelectionChanged" Height="25" Width="60" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="108,70,0,0"/>
+        <ComboBox MouseEnter="comboBoxR_MouseEnter" ToolTip="{DynamicResource cbxRange}" Name="comboBoxR" FontSize="13" SelectionChanged="comboBoxR_SelectionChanged" Height="25" Width="60" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="108,70,0,0"/>
 
         <Button x:Name="btnClear"
                 UseLayoutRounding="True"
@@ -116,7 +116,7 @@
                 Margin="262,70,0,0"
                 Width="20"
                 WindowChrome.IsHitTestVisibleInChrome="True"                      
-                FontFamily="Assets/Fonts/#Segoe MDL2 Assets"
+                FontFamily="pack://application:,,,/Assets/Fonts/#Segoe MDL2 Assets"
                 FontSize="12"
                 Content="&#xEB97;"
                 Click="btnClear_Click"
@@ -127,20 +127,20 @@
             </ToolTipService.ToolTip>
         </Button>
         <Label x:Name="lbTittle" x:FieldModifier="public" Visibility="Hidden" Width="112" HorizontalContentAlignment="Center" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="180,40,0,0" Content="{DynamicResource AppliedCorrection}" />
-        <Image x:Name="imgGear1" x:FieldModifier="public" Visibility="Hidden" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="197,70,0,0" Source="Assets/images/32_40.png"/>
-        <Label x:Name="arrow" x:FieldModifier="public" Visibility="Hidden" FontSize="10" FontFamily="Assets/Fonts/#Segoe MDL2 Assets" Content="&#xF0AF;" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="217,70,0,0" RenderTransformOrigin="1.35,0.583"/>
-        <Image x:Name="imgGear2" x:FieldModifier="public" Visibility="Hidden" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="237,70,0,0" Source="Assets/images/32_40.png"/>
+        <Image x:Name="imgGear1" x:FieldModifier="public" Visibility="Hidden" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="197,70,0,0" Source="pack://application:,,,/Assets/images/32_40.png"/>
+        <Label x:Name="arrow" x:FieldModifier="public" Visibility="Hidden" FontSize="10" FontFamily="pack://application:,,,/Assets/Fonts/#Segoe MDL2 Assets" Content="&#xF0AF;" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="217,70,0,0" RenderTransformOrigin="1.35,0.583"/>
+        <Image x:Name="imgGear2" x:FieldModifier="public" Visibility="Hidden" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="237,70,0,0" Source="pack://application:,,,/Assets/images/32_40.png"/>
 
 
 
 
 
         <GroupBox Header="{DynamicResource Formula}" FontSize="13" Height="78" Width="154" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,105,0,0">
-            <Image Name="img" Source="Assets/Images/wmecen_black_en.png"/>
+            <Image Name="img" MouseDown="img_MouseDown" ToolTip="{DynamicResource CaclFormulaImg}" Source="pack://application:,,,/Assets/Images/wmecen_black_en.png"/>
         </GroupBox>
         <GroupBox Header="{DynamicResource Result}" FontSize="13" Height="78" Width="123" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,105,0,0">
             <StackPanel Margin="0,-4,0,0">
-                <Label x:Name="lbResult" Content="0,00" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontWeight="Bold" FontFamily="Arial" FontStyle="Italic" RenderTransformOrigin="0.509,0.023"/>
+                <Label x:Name="lbResult" ToolTip="{DynamicResource LabelResult}" Content="0,00" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontWeight="Bold" FontFamily="Arial" FontStyle="Italic" RenderTransformOrigin="0.509,0.023"/>
             </StackPanel>
         </GroupBox>
         <GroupBox Name="gbErros" FontSize="13" IsEnabled="False" Header="{DynamicResource Errors}" Height="355" Width="155" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,191,0,0">

@@ -3,6 +3,8 @@
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
     <system:String x:Key="Tittle">WME Calculation</system:String>
     <system:String x:Key="TittleGearCorrection">Gear Correction</system:String>
+    <system:String x:Key="AboutPage">About WME Calculation</system:String>
+    <system:String x:Key="FormulaInfo">WME Calculation Info</system:String>
     <system:String x:Key="Loading">Loading</system:String>
     <TextBlock x:Key="Options" Text="Options"/>
     <TextBlock x:Key="Language" Text="Language"/>
@@ -47,7 +49,10 @@
     <system:String x:Key="ClearCorrection">Clear correction</system:String>
     <system:String x:Key="InstanceApp">Application already open.</system:String>
     <TextBlock x:Key="WIP" Text="WIP"/>
-
+    <TextBlock x:Key="CaclFormulaImg"><Bold>Calculation Formula</Bold><LineBreak/>Click for more information.</TextBlock>
+    <TextBlock x:Key="cbxG" Text="Select a G Size"/>
+    <TextBlock x:Key="cbxRange" Text="Select a Range"/>
+    <TextBlock x:Key="LabelResult" FontSize="13" FontWeight="Normal" FontStyle="Normal" FontFamily="Segoe UI" Text="Calculation result."/>
 
 
 

@@ -50,7 +50,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Icon_white.ico</ApplicationIcon>
+    <ApplicationIcon>WMEIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -98,6 +98,12 @@
   <PropertyGroup>
     <SignManifests>false</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>DC89476C8F0F6F20EE7A9F0D40359D4F1371D1AE</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>WMECalculation_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
@@ -124,12 +130,18 @@
     <Compile Include="Calculate.cs" />
     <Compile Include="CalculateGears.cs" />
     <Compile Include="Connection.cs" />
-    <Compile Include="GearCorrection.xaml.cs">
+    <Compile Include="View\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormulaInfo.xaml.cs">
+      <DependentUpon>FormulaInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GearCorrection.xaml.cs">
       <DependentUpon>GearCorrection.xaml</DependentUpon>
     </Compile>
     <Compile Include="IniFile.cs" />
     <Compile Include="InitConnections.cs" />
-    <Compile Include="Loading.xaml.cs">
+    <Compile Include="View\Loading.xaml.cs">
       <DependentUpon>Loading.xaml</DependentUpon>
     </Compile>
     <Compile Include="SendKeys.cs" />
@@ -149,15 +161,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="GearCorrection.xaml">
+    <Page Include="View\About.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Loading.xaml">
+    <Page Include="View\FormulaInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="View\GearCorrection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Loading.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -165,7 +185,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -196,6 +216,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="WMECalculation_TemporaryKey.pfx" />
     <Resource Include="Assets\Fonts\SEGMDL2.TTF" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -231,7 +252,10 @@
     <Resource Include="Assets\Images\wmecen_black_en.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icon_white.ico" />
+    <Resource Include="Assets\Images\wmeinfo_white_en.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WMEIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
