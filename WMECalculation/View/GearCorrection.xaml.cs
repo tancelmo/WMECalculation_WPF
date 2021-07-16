@@ -33,14 +33,14 @@ namespace WMECalculation
 
         private void cbCurrentGears_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            StdFunctions.GearsImgR1(gears1, cbCurrentGears);
+            StdFunctions.GearsImg(gears1, cbCurrentGears);
             CalculateGears.CalculateGears1(cbCurrentGears, this);
             CalculateGears.ResultGears(cbCurrentGears,cbNewGears, lbCalcGears);
         }
 
         private void cbNewGears_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            StdFunctions.GearsImgR2(gears2, cbNewGears);
+            StdFunctions.GearsImg(gears2, cbNewGears);
             CalculateGears.CalculateGears2(cbNewGears, this);
             CalculateGears.ResultGears(cbCurrentGears, cbNewGears, lbCalcGears);
         }
@@ -49,18 +49,18 @@ namespace WMECalculation
         {
             CalculateGears.checkCalutateBtn = true;
             CalculateGears.ResultGears(cbCurrentGears, cbNewGears, lbCalcGears);
-            this.Close();
+            Close();
             
         }
 
         private void cbCurrentGears_MouseEnter(object sender, MouseEventArgs e)
         {
-            cbCurrentGears.Focus();
+            _ = cbCurrentGears.Focus();
         }
 
         private void cbNewGears_MouseEnter(object sender, MouseEventArgs e)
         {
-            cbNewGears.Focus();
+            _ = cbNewGears.Focus();
         }
     }
 }

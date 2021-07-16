@@ -40,7 +40,7 @@
     <TextBlock x:Key="percentCorrection" Text="% Correction"/>
     <TextBlock x:Key="btnCalculate" Text="Calculate"/>
     <TextBlock x:Key="lbEngine" Text="Checking Access Database Engine..."/>
-    <TextBlock x:Key="AppliedCorrection" Text="Applied correction"/>
+    <system:String x:Key="AppliedCorrection">Applied</system:String>
     <system:String x:Key="DbNotFound">Database not found.</system:String>
     <system:String x:Key="ConfigNotFound">Config file not found.</system:String>
     <system:String x:Key="StringGearsNotFound">String Gears file not found.</system:String>

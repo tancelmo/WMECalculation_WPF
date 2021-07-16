@@ -17,7 +17,7 @@ namespace WMECalculation
             /// TryParse
             
             #region
-            if (!double.TryParse(tbQmax.Text, out check))
+            if (!double.TryParse(tbQmax.Text, out _))
             {
                 Qmax = 0;
             }
@@ -26,7 +26,7 @@ namespace WMECalculation
                 Qmax = Convert.ToDouble(tbQmax.Text);
                 QiQmax = 0.4;
             }
-            if (!double.TryParse(tbQ07.Text, out check))
+            if (!double.TryParse(tbQ07.Text, out _))
             {
                 Q07 = 0;
             }
@@ -35,7 +35,7 @@ namespace WMECalculation
                 Q07 = Convert.ToDouble(tbQ07.Text);
                 QiQ07 = 0.7;
             }
-            if (!double.TryParse(tbQ04.Text, out check))
+            if (!double.TryParse(tbQ04.Text, out _))
             {
                 Q04 = 0;
             }
@@ -135,7 +135,7 @@ namespace WMECalculation
             }
 
             result = sum / (QiValues.Sum());
-            lbResult.Content = String.Format("{0:0.00}", result);
+            lbResult.Content = string.Format("{0:0.00}", result);
             
             if (Double.IsNaN(result))
             {

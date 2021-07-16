@@ -193,7 +193,7 @@ namespace WMECalculation
             
         }
 
-        public static void GearsImgR1(Image r1, ComboBox cbR1)
+        public static void GearsImg(Image r1, ComboBox cbR1)
         {
 
             try
@@ -203,19 +203,6 @@ namespace WMECalculation
             catch
             {
                 r1.Source = new BitmapImage(new Uri("pack://application:,,,/Assets/Images/nogearimg.png"));
-            }
-        }
-
-        public static void GearsImgR2(Image r2, ComboBox cbR2)
-        {
-
-            try
-            {
-                r2.Source = new BitmapImage(new Uri(Convert.ToString(Directory.GetCurrentDirectory().Replace("\\", "/") + "/images/gears/" + Convert.ToString(cbR2.SelectedItem).Replace(";", "_").Remove(5) + ".png")));
-            }
-            catch
-            {
-                r2.Source = new BitmapImage(new Uri("pack://application:,,,/Assets/Images/nogearimg.png"));
             }
         }
 

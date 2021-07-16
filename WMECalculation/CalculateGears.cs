@@ -115,7 +115,7 @@ namespace WMECalculation
             }
         }
 
-        public static void ApplyCalculatedGears(TextBox Qmax, TextBox Q07, TextBox Q04, TextBox Q025, TextBox Q015, TextBox Q01, TextBox Q005, TextBox Qmin, double resultFromGears, Image imgGear1, Image imgGear2, Label lbTittle, Label arrow, Button btnClear)
+        public static void ApplyCalculatedGears(TextBox Qmax, TextBox Q07, TextBox Q04, TextBox Q025, TextBox Q015, TextBox Q01, TextBox Q005, TextBox Qmin, double resultFromGears, Image imgGear1, Image imgGear2, Label lbTittle, Label arrow, Label gear1, Label gear2, Button btnClear)
         {
             if (Qmax.Text == "")
             {
@@ -187,15 +187,20 @@ namespace WMECalculation
             lbTittle.Visibility = Visibility.Visible;
             btnClear.Visibility = Visibility.Visible;
             arrow.Visibility = Visibility.Visible;
+            gear1.Visibility = Visibility.Visible;
+            gear2.Visibility = Visibility.Visible;
+
         }
 
-        public static void ResetCalc(Image imgGear1, Image imgGear2, Label arrow, Label lbTittle, Button btnClear)
+        public static void ResetCalc(Image imgGear1, Image imgGear2, Label arrow, Label lbTittle, Label gear1, Label gear2, Button btnClear)
         {
             imgGear1.Visibility = Visibility.Hidden;
             imgGear2.Visibility = Visibility.Hidden;
             lbTittle.Visibility = Visibility.Hidden;
             btnClear.Visibility = Visibility.Hidden;
             arrow.Visibility = Visibility.Hidden;
+            gear1.Visibility = Visibility.Hidden;
+            gear2.Visibility = Visibility.Hidden;
 
         }
     }

@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WMECalculation"
         mc:Ignorable="d"
-        Width="270"
-        Height="200"
+        Width="280"
+        Height="210"
         WindowStartupLocation="CenterScreen"
         Style="{DynamicResource CustomWindowStyle}"
         Title="{DynamicResource TittleGearCorrection}" 
@@ -39,14 +39,14 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Label Content="{DynamicResource currentGears}" Margin="5,5,0,0" Height="30" VerticalAlignment="Top" FontSize="13" />
-            <ComboBox MouseEnter="cbCurrentGears_MouseEnter" FontSize="13" SelectionChanged="cbCurrentGears_SelectionChanged" Name="cbCurrentGears" Width="120" Height="25" Margin="10,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            <Label Content="{DynamicResource newGears}" Margin="5,58,0,0" Height="30" VerticalAlignment="Top" FontSize="13"/>
-            <ComboBox MouseEnter="cbNewGears_MouseEnter" FontSize="13" SelectionChanged="cbNewGears_SelectionChanged" Name="cbNewGears" Width="120" Height="25" Margin="10,83,0,10" HorizontalAlignment="Left"/>
-            <GroupBox Header="{DynamicResource percentCorrection}" FontSize="13" Grid.Column="1" Width="110" HorizontalAlignment="Right" Margin="0,9,10,40">
+            <Label Content="{DynamicResource currentGears}" Margin="10,5,0,0" Height="30" VerticalAlignment="Top" FontSize="13" />
+            <ComboBox MouseEnter="cbCurrentGears_MouseEnter" FontSize="13" SelectionChanged="cbCurrentGears_SelectionChanged" Name="cbCurrentGears" Width="120" Height="25" Margin="15,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label Content="{DynamicResource newGears}" Margin="10,58,0,0" Height="30" VerticalAlignment="Top" FontSize="13"/>
+            <ComboBox MouseEnter="cbNewGears_MouseEnter" FontSize="13" SelectionChanged="cbNewGears_SelectionChanged" Name="cbNewGears" Width="120" Height="25" Margin="15,83,0,10" HorizontalAlignment="Left"/>
+            <GroupBox Header="{DynamicResource percentCorrection}" FontSize="13" Grid.Column="1" Width="110" HorizontalAlignment="Right" Margin="0,9,15,45">
                 <Label Name="lbCalcGears" Content="0,00 %" HorizontalAlignment="Center" FontSize="16"/>
             </GroupBox>
-            <Button Name="btnCalculate" Click="btnCalculate_Click" FontSize="13" Content="{DynamicResource btnCalculate}" Grid.Column="1" Width="110" HorizontalAlignment="Right" Height="25" Margin="0,83,10,10"/>
+            <Button Name="btnCalculate" Click="btnCalculate_Click" FontSize="13" Content="{DynamicResource btnCalculate}" Grid.Column="1" Width="110" HorizontalAlignment="Right" Height="25" Margin="0,83,15,10"/>
         </Grid>
     </Grid>
 </Window>

@@ -19,7 +19,7 @@
     <system:String x:Key="Close">Fechar</system:String>
 
     <!--Standart Strings-->
-    
+    <system:String x:Key="AppliedCorrection">Aplicado</system:String>
     <TextBlock x:Key="Options" Text="Opções"/>
     <TextBlock x:Key="Language" Text="Idioma"/>
     <TextBlock x:Key="English" Text="Inglês"/>

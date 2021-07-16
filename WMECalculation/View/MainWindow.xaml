@@ -51,7 +51,7 @@
                 FontFamily="pack://application:,,,/Assets/Fonts/#Segoe MDL2 Assets"
                 FontSize="10"
                 Content="&#xE8BB;"
-                Click="btnClose_Click"
+                Click="BtnClose_Click"
                 KeyboardNavigation.IsTabStop="False">
             <ToolTipService.ToolTip>
                 <TextBlock FontWeight="{x:Static SystemFonts.MessageFontWeight}" FontFamily="{x:Static SystemFonts.CaptionFontFamily}" FontSize="13" Text="{DynamicResource Close}"></TextBlock>
@@ -113,7 +113,7 @@
                 Height="20"
                 Background="Transparent"
                 BorderBrush="Transparent"
-                Margin="262,70,0,0"
+                Margin="282,62,0,0"
                 Width="20"
                 WindowChrome.IsHitTestVisibleInChrome="True"                      
                 FontFamily="pack://application:,,,/Assets/Fonts/#Segoe MDL2 Assets"
@@ -126,10 +126,12 @@
                 <TextBlock FontWeight="{x:Static SystemFonts.MessageFontWeight}" FontFamily="{x:Static SystemFonts.CaptionFontFamily}" FontSize="{x:Static SystemFonts.IconFontSize}" Text="{DynamicResource ClearCorrection}"/>
             </ToolTipService.ToolTip>
         </Button>
-        <Label x:Name="lbTittle" x:FieldModifier="public" Visibility="Hidden" Width="112" HorizontalContentAlignment="Center" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="180,40,0,0" Content="{DynamicResource AppliedCorrection}" />
-        <Image x:Name="imgGear1" x:FieldModifier="public" Visibility="Hidden" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="197,70,0,0" Source="pack://application:,,,/Assets/images/32_40.png"/>
-        <Label x:Name="arrow" x:FieldModifier="public" Visibility="Hidden" FontSize="10" FontFamily="pack://application:,,,/Assets/Fonts/#Segoe MDL2 Assets" Content="&#xF0AF;" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="217,70,0,0" RenderTransformOrigin="1.35,0.583"/>
-        <Image x:Name="imgGear2" x:FieldModifier="public" Visibility="Hidden" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="237,70,0,0" Source="pack://application:,,,/Assets/images/32_40.png"/>
+        <Label x:Name="lbTittle" x:FieldModifier="public" Visibility="Hidden" Width="122" Height="27" HorizontalContentAlignment="Center" FontSize="13" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="180,34,0,0" Content="{DynamicResource AppliedCorrection}" />
+        <Image x:Name="imgGear1" x:FieldModifier="public" Visibility="Hidden" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="207,62,0,0" Source="pack://application:,,,/Assets/images/32_40.png"/>
+        <Label x:Name="arrow" x:FieldModifier="public" Visibility="Hidden" FontSize="10" FontFamily="pack://application:,,,/Assets/Fonts/#Segoe MDL2 Assets" Content="&#xF0AF;" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="229,62,0,0" RenderTransformOrigin="1.35,0.583"/>
+        <Image x:Name="imgGear2" x:FieldModifier="public" Visibility="Hidden" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="251,62,0,0" Source="pack://application:,,,/Assets/images/32_40.png"/>
+        <Label x:Name="gearValue1" x:FieldModifier="public" Visibility="Hidden" Content="32;40" Width="35" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="10" Margin="200,77,0,0"/>
+        <Label x:Name="gearValue2" x:FieldModifier="public" Visibility="Hidden" Content="32;40" Width="35" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="10" Margin="243,77,0,0"/>
 
 
 

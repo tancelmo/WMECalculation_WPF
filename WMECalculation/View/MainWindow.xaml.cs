@@ -58,7 +58,7 @@ namespace WMECalculation
 
             loading.InitConnections.Visibility = Visibility.Visible;
             InitConnections initConnections = new InitConnections();
-            initConnections.ConnectComboBox(comboBoxG, comboBoxR, this);           
+            initConnections.ConnectComboBox(comboBoxG, comboBoxR, this);
             loading.InitConnections.Visibility = Visibility.Hidden;
             loading.CheckFiles.Visibility = Visibility.Visible;
             loading.Close();
@@ -70,7 +70,7 @@ namespace WMECalculation
             WindowState = WindowState.Minimized;
         }
 
-        private void btnClose_Click(object sender, RoutedEventArgs e)
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
@@ -99,7 +99,7 @@ namespace WMECalculation
         {
             if (comboBoxG.SelectedItem == null || comboBoxR.SelectedItem == null)
             {
-                MessageBox.Show(Convert.ToString(this.FindResource("NoGSize")));
+                _ = MessageBox.Show(Convert.ToString(FindResource("NoGSize")));
             }
             else
             {
@@ -109,24 +109,27 @@ namespace WMECalculation
                 if (CalculateGears.checkCalutateBtn)
                 {
                     resultFromGears = CalculateGears.resultGear;
-                    CalculateGears.ApplyCalculatedGears(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, resultFromGears, imgGear1, imgGear2, arrow, lbTittle, btnClear);
+                    CalculateGears.ApplyCalculatedGears(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, resultFromGears, imgGear1, imgGear2, arrow, gearValue1, gearValue2, lbTittle, btnClear);
                     Calculate.ExecuteCalc(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, comboBoxG, comboBoxR, lbResult);
+                    StdFunctions.GearsImg(imgGear1, gearCorrection.cbCurrentGears);
+                    StdFunctions.GearsImg(imgGear2, gearCorrection.cbNewGears);
+                    lbTittle.Content = Convert.ToString(FindResource("AppliedCorrection")) + " " + string.Format("{0:0.00}", resultFromGears) + " %";
+                    gearValue1.Content = gearCorrection.cbCurrentGears.Text.Substring(0, 5);
+                    gearValue2.Content = gearCorrection.cbNewGears.Text.Substring(0, 5);
                 }
             }
-            
-            
         }
 
 
         private void Qmax_LostFocus(object sender, RoutedEventArgs e)
         {
-            StdFunctions.CheckIsNumber(Qmax, Convert.ToString(this.FindResource("CheckIsNumber")));
+            StdFunctions.CheckIsNumber(Qmax, Convert.ToString(FindResource("CheckIsNumber")));
             Calculate.ExecuteCalc(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, comboBoxG, comboBoxR, lbResult);
         }
 
         private void Q07_LostFocus(object sender, RoutedEventArgs e)
         {
-            StdFunctions.CheckIsNumber(Q07, Convert.ToString(this.FindResource("CheckIsNumber")));
+            StdFunctions.CheckIsNumber(Q07, Convert.ToString(FindResource("CheckIsNumber")));
             Calculate.ExecuteCalc(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, comboBoxG, comboBoxR, lbResult);
         }
 
@@ -235,8 +238,8 @@ namespace WMECalculation
         {
             
             resultFromGears *= -1;
-            CalculateGears.ApplyCalculatedGears(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, resultFromGears, imgGear1, imgGear2, arrow, lbTittle, btnClear);
-            CalculateGears.ResetCalc(imgGear1, imgGear2, arrow, lbTittle, btnClear);
+            CalculateGears.ApplyCalculatedGears(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, resultFromGears, imgGear1, imgGear2, arrow, gearValue1, gearValue2, lbTittle, btnClear);
+            CalculateGears.ResetCalc(imgGear1, imgGear2, arrow, lbTittle, gearValue1, gearValue2, btnClear);
             Calculate.ExecuteCalc(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, comboBoxG, comboBoxR, lbResult);
 
         }
