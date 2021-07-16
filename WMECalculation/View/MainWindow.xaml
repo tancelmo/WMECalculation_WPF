@@ -119,7 +119,7 @@
                 FontFamily="pack://application:,,,/Assets/Fonts/#Segoe MDL2 Assets"
                 FontSize="12"
                 Content="&#xEB97;"
-                Click="btnClear_Click"
+                Click="BtnClear_Click"
                 KeyboardNavigation.IsTabStop="False"
                 Visibility="Hidden">
             <ToolTipService.ToolTip>

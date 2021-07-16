@@ -9,8 +9,8 @@
         Style="{DynamicResource CustomWindowStyle}"
         Title="{DynamicResource AboutPage}"
         ResizeMode="CanMinimize"
-        Height="300" Width="350">
-    <Grid>
+        Height="245" Width="340">
+    <Grid Margin="0,0,0,-2">
         <Button x:Name="btnClose"
                 UseLayoutRounding="True"
                 HorizontalAlignment="Right"
@@ -31,6 +31,75 @@
             </ToolTipService.ToolTip>
         </Button>
         <Label HorizontalContentAlignment="Center" FontSize="13" VerticalContentAlignment="Center" Style="{DynamicResource CustomLabelTitle}" Content="{Binding Title,RelativeSource={RelativeSource FindAncestor,AncestorType=Window}}" Width="auto" Height="28" HorizontalAlignment="Center" VerticalAlignment="top" Margin="0,5,0,0"/>
-        <Image Source="pack://application:,,,/WMEIcon.ico" Width="128" Height="128" MouseLeftButtonDown="Image_MouseLeftButtonDown" Margin="0 0 0 0"/>
+        <Image Source="pack://application:,,,/WMEIcon.ico" Width="128" Height="128" HorizontalAlignment="Left" VerticalAlignment="Top" MouseLeftButtonDown="Image_MouseLeftButtonDown" Margin="25 50 0 0"/>
+        <Label Content="{DynamicResource Tittle}" FontSize="13" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150 50 0 0"/>
+        <Label Name="LbVersion" FontSize="13" x:FieldModifier="public" Content="Version 0.0.0.0.0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150 70 0 0"/>
+ 
+        <Grid Margin="150 90 0 0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Label FontSize="13" Grid.Column="0" Content="{DynamicResource CreditsFrom2}"/>
+            <TextBlock FontSize="13" Margin="0 5 0 0" Grid.Row="0" Grid.Column="1">
+            <Hyperlink NavigateUri="https://github.com/AngryCarrot789/WPFDarkTheme/" RequestNavigate="Hyperlink_RequestNavigate">AngryCarrot789</Hyperlink>
+            </TextBlock>
+        </Grid>
+        <Grid Margin="150 110 0 0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Label FontSize="13" Grid.Column="0" Content="{DynamicResource CreditsFrom3}"/>
+            <TextBlock FontSize="13" Margin="0 5 0 0" Grid.Row="0" Grid.Column="1">
+            <Hyperlink NavigateUri="https://github.com/tancelmo/" RequestNavigate="Hyperlink_RequestNavigate">Taliston A. S.</Hyperlink>
+            </TextBlock>
+        </Grid>
+
+        <Grid Margin="20 180 0 0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Label FontSize="13" Grid.Column="0" Content="{DynamicResource CreditsBy}"/>
+            <TextBlock FontSize="13" Margin="0 5 0 0" Grid.Row="0" Grid.Column="1">
+            <Hyperlink NavigateUri="https://www.freepik.com/" RequestNavigate="Hyperlink_RequestNavigate">Freepik</Hyperlink>
+            </TextBlock>
+            <Label FontSize="13" Grid.Column="2" Content="{DynamicResource CreditsFrom}"/>
+            <TextBlock FontSize="13" Margin="0 5 0 0" Grid.Column="3">
+            <Hyperlink NavigateUri="https://flaticon.com/" RequestNavigate="Hyperlink_RequestNavigate">FlatIcon.com</Hyperlink>
+            </TextBlock>
+        </Grid>
+        
+        <Grid Margin="20 200 0 0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label FontSize="13" Grid.Column="0" Content="{DynamicResource CreditsBy1}"/>
+            <TextBlock FontSize="13" Margin="0 5 0 0" Grid.Row="0" Grid.Column="1">
+            <Hyperlink NavigateUri="https://www.flaticon.com/authors/prettycons/" RequestNavigate="Hyperlink_RequestNavigate">prettyicons</Hyperlink>
+            </TextBlock>
+            <Label FontSize="13" Grid.Column="2" Content="{DynamicResource CreditsFrom1}"/>
+            <TextBlock FontSize="13" Margin="0 5 0 0" Grid.Column="3">
+            <Hyperlink NavigateUri="https://flaticon.com/" RequestNavigate="Hyperlink_RequestNavigate">FlatIcon.com</Hyperlink>
+            </TextBlock>
+        </Grid>
     </Grid>
 </Window>

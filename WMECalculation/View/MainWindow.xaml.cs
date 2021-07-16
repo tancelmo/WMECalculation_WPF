@@ -22,8 +22,7 @@ namespace WMECalculation
         public MainWindow()
         {
             InitializeComponent();
-
-            
+   
             ///
             /// 1 instance
             /// 
@@ -234,7 +233,7 @@ namespace WMECalculation
             comboBoxR.Focus();
         }
 
-        private void btnClear_Click(object sender, RoutedEventArgs e)
+        private void BtnClear_Click(object sender, RoutedEventArgs e)
         {
             
             resultFromGears *= -1;

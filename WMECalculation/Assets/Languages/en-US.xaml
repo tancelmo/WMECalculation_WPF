@@ -6,6 +6,7 @@
     <system:String x:Key="AboutPage">About WME Calculation</system:String>
     <system:String x:Key="FormulaInfo">WME Calculation Info</system:String>
     <system:String x:Key="Loading">Loading</system:String>
+    <system:String x:Key="Version">Version</system:String>
     <TextBlock x:Key="Options" Text="Options"/>
     <TextBlock x:Key="Language" Text="Language"/>
     <TextBlock x:Key="English" Text="English"/>
@@ -40,6 +41,12 @@
     <TextBlock x:Key="percentCorrection" Text="% Correction"/>
     <TextBlock x:Key="btnCalculate" Text="Calculate"/>
     <TextBlock x:Key="lbEngine" Text="Checking Access Database Engine..."/>
+    <TextBlock x:Key="CreditsBy" Text="Icons made by"/>
+    <TextBlock x:Key="CreditsFrom" Text="from"/>
+    <TextBlock x:Key="CreditsBy1" Text="Icons made by"/>
+    <TextBlock x:Key="CreditsFrom1" Text="from"/>
+    <TextBlock x:Key="CreditsFrom2" Text="Themes by"/>
+    <TextBlock x:Key="CreditsFrom3" Text="Developed by"/>
     <system:String x:Key="AppliedCorrection">Applied</system:String>
     <system:String x:Key="DbNotFound">Database not found.</system:String>
     <system:String x:Key="ConfigNotFound">Config file not found.</system:String>
