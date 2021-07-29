@@ -27,11 +27,11 @@ namespace WMECalculation
                 App.Current.Shutdown();
             }
         }
-        public static void StartUP(Window mainWindow, MenuItem menuDark, MenuItem menuLight, MenuItem menuLang, MenuItem menuTheme, MenuItem menuGear, MenuItem menuAbout, Image image, Label result)
+        public static void StartUP(Window mainWindow, Image image, Label result)
         {
-            var readIni = new IniFile("config.ini");
-            var currentLanguage = readIni.Read("Language");
-            var currentTheme = readIni.Read("Theme");
+            IniFile readIni = new IniFile("config.ini");
+            string currentLanguage = readIni.Read("Language");
+            string currentTheme = readIni.Read("Theme");
             if (currentLanguage == "en-US")
             {
                 ResourceDictionary newRes = new ResourceDictionary();
@@ -50,6 +50,15 @@ namespace WMECalculation
                 Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("pt-BR");
                 result.Content = "0,00";
             }
+            else if (currentLanguage == "es-ES")
+            {
+                ResourceDictionary newRes = new ResourceDictionary();
+                newRes.Source = new Uri("/Assets/Languages/es-ES.xaml", UriKind.RelativeOrAbsolute);
+                mainWindow.Resources.MergedDictionaries.Add(newRes);
+                Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("es-ES");
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("es-ES");
+                result.Content = "0,00";
+            }
             else
             {
                 ResourceDictionary newRes = new ResourceDictionary();
@@ -63,7 +72,7 @@ namespace WMECalculation
                 ResourceDictionary newRes = new ResourceDictionary();
                 newRes.Source = new Uri("/Themes/LightTheme.xaml", UriKind.RelativeOrAbsolute);
                 mainWindow.Resources.MergedDictionaries.Add(newRes);
-                image.Source = new BitmapImage(new Uri("pack://application:,,,/Assets/Images/wmecen_black_en.png"));
+                image.Source = new BitmapImage(new Uri("pack://application:,,,/Assets/Images/WMEInfo/wmecen_" + currentLanguage + "_" + currentTheme + ".png"));
                 
             }
             else if (currentTheme == "Dark")
@@ -71,7 +80,7 @@ namespace WMECalculation
                 ResourceDictionary newRes = new ResourceDictionary();
                 newRes.Source = new Uri("/Themes/DarkTheme.xaml", UriKind.RelativeOrAbsolute);
                 mainWindow.Resources.MergedDictionaries.Add(newRes);
-                image.Source = new BitmapImage(new Uri("pack://application:,,,/Assets/Images/wmecen_white_en.png"));
+                image.Source = new BitmapImage(new Uri("pack://application:,,,/Assets/Images/WMEInfo/wmecen_" + currentLanguage + "_" + currentTheme + ".png"));
 
             }
             else
@@ -164,6 +173,12 @@ namespace WMECalculation
                 newRes.Source = new Uri("/Assets/Languages/pt-BR.xaml", UriKind.RelativeOrAbsolute);
                 gearCorrection.Resources.MergedDictionaries.Add(newRes);
             }
+            else if (currentLanguage == "es-ES")
+            {
+                ResourceDictionary newRes = new ResourceDictionary();
+                newRes.Source = new Uri("/Assets/Languages/es-ES.xaml", UriKind.RelativeOrAbsolute);
+                gearCorrection.Resources.MergedDictionaries.Add(newRes);
+            }
             else
             {
                 ResourceDictionary newRes = new ResourceDictionary();
@@ -191,6 +206,62 @@ namespace WMECalculation
             }
             #endregion
             
+        }
+
+        public static void LoadGearWMEInfo(Window window, Image image)
+        {
+            #region
+            IniFile readIni = new IniFile("config.ini");
+            string currentLanguage = readIni.Read("Language");
+            string currentTheme = readIni.Read("Theme");
+            if (currentLanguage == "en-US")
+            {
+                ResourceDictionary newRes = new ResourceDictionary();
+                newRes.Source = new Uri("/Assets/Languages/en-US.xaml", UriKind.RelativeOrAbsolute);
+                window.Resources.MergedDictionaries.Add(newRes);
+            }
+            else if (currentLanguage == "pt-BR")
+            {
+                ResourceDictionary newRes = new ResourceDictionary();
+                newRes.Source = new Uri("/Assets/Languages/pt-BR.xaml", UriKind.RelativeOrAbsolute);
+                window.Resources.MergedDictionaries.Add(newRes);
+            }
+            else if (currentLanguage == "es-ES")
+            {
+                ResourceDictionary newRes = new ResourceDictionary();
+                newRes.Source = new Uri("/Assets/Languages/es-ES.xaml", UriKind.RelativeOrAbsolute);
+                window.Resources.MergedDictionaries.Add(newRes);
+            }
+            else
+            {
+                ResourceDictionary newRes = new ResourceDictionary();
+                newRes.Source = new Uri("/Assets/Languages/en-US.xaml", UriKind.RelativeOrAbsolute);
+                window.Resources.MergedDictionaries.Add(newRes);
+            }
+
+            if (currentTheme == "Light")
+            {
+                ResourceDictionary newRes = new ResourceDictionary();
+                newRes.Source = new Uri("/Themes/LightTheme.xaml", UriKind.RelativeOrAbsolute);
+                window.Resources.MergedDictionaries.Add(newRes);
+                image.Source = new BitmapImage(new Uri("pack://application:,,,/Assets/Images/WMEInfo/wmeinfo_" + currentLanguage + "_light.png"));
+            }
+            else if (currentTheme == "Dark")
+            {
+                ResourceDictionary newRes = new ResourceDictionary();
+                newRes.Source = new Uri("/Themes/DarkTheme.xaml", UriKind.RelativeOrAbsolute);
+                window.Resources.MergedDictionaries.Add(newRes);
+                image.Source = new BitmapImage(new Uri("pack://application:,,,/Assets/Images/WMEInfo/wmeinfo_" + currentLanguage + "_dark.png"));
+            }
+            else
+            {
+                ResourceDictionary newRes = new ResourceDictionary();
+                newRes.Source = new Uri("/Themes/Light.xaml", UriKind.RelativeOrAbsolute);
+                window.Resources.MergedDictionaries.Add(newRes);
+                image.Source = new BitmapImage(new Uri("pack://application:,,,/Assets/Images/WMEInfo/wmeinfo_en-US_light.png"));
+            }
+            #endregion
+
         }
 
         public static void GearsImg(Image r1, ComboBox cbR1)
@@ -272,15 +343,17 @@ namespace WMECalculation
             }
         }
 
-        public static void SetLanguage(Window window, string language, Label result)
+        public static void SetLanguage(Window window, string language, Label result, Image image)
         {
 
             ResourceDictionary newRes = new ResourceDictionary();
             newRes.Source = new Uri("/Assets/Languages/" + language + ".xaml", UriKind.RelativeOrAbsolute);
-            //this.Resources.MergedDictionaries.Clear();
             window.Resources.MergedDictionaries.Add(newRes);
             var readIni = new IniFile("config.ini");
             readIni.Write("Language", language);
+            string currentLanguage = readIni.Read("Language");
+            string currentTheme = readIni.Read("Theme");
+            image.Source = new BitmapImage(new Uri("pack://application:,,,/Assets/Images/WMEInfo/wmecen_" + currentLanguage + "_" + currentTheme + ".png"));
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(language);
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
             if(language == "en-US")
@@ -293,39 +366,16 @@ namespace WMECalculation
             }
         }
 
-        public static void ChangeTheme(Window window, string theme, string iconColor, MenuItem menuDark, MenuItem menuLight, MenuItem menuLang, MenuItem menuTheme, MenuItem menuGear, MenuItem menuAbout, TextBox tbQmax, TextBox tbQ07, TextBox tbQ04, TextBox tbQ025, TextBox tbQ015, TextBox tbQ010, TextBox tbQ005, TextBox tbQm, ComboBox cbG, ComboBox cbR, Label lbResult, Image image)
+        public static void ChangeTheme(Window window, string theme, TextBox tbQmax, TextBox tbQ07, TextBox tbQ04, TextBox tbQ025, TextBox tbQ015, TextBox tbQ010, TextBox tbQ005, TextBox tbQm, ComboBox cbG, ComboBox cbR, Label lbResult, Image image)
         {
             ResourceDictionary newRes = new ResourceDictionary();
             newRes.Source = new Uri("/Themes/" + theme + "Theme.xaml", UriKind.RelativeOrAbsolute);
-            //this.Resources.MergedDictionaries.Clear();
             window.Resources.MergedDictionaries.Add(newRes);
             var readIni = new IniFile("config.ini");
             readIni.Write("Theme", theme);
-            //menuDark.Icon = new System.Windows.Controls.Image
-            //{
-            //    Source = new BitmapImage(new Uri("pack://application:,,,/Assets/Images/moon_" + iconColor + ".png"))
-            //};
-            //menuLight.Icon = new System.Windows.Controls.Image
-            //{
-            //    Source = new BitmapImage(new Uri("pack://application:,,,/Assets/Images/sun_" + iconColor + ".png"))
-            //};
-            //menuLang.Icon = new System.Windows.Controls.Image
-            //{
-            //    Source = new BitmapImage(new Uri("pack://application:,,,/Assets/Images/translate_" + iconColor + ".png"))
-            //};
-            //menuTheme.Icon = new System.Windows.Controls.Image
-            //{
-            //    Source = new BitmapImage(new Uri("pack://application:,,,/Assets/Images/theme_" + iconColor + ".png"))
-            //};
-            //menuGear.Icon = new System.Windows.Controls.Image
-            //{
-            //    Source = new BitmapImage(new Uri("pack://application:,,,/Assets/Images/gear_" + iconColor + ".png"))
-            //};
-            //menuAbout.Icon = new System.Windows.Controls.Image
-            //{
-            //    Source = new BitmapImage(new Uri("pack://application:,,,/Assets/Images/about_" + iconColor + ".png"))
-            //};
-            image.Source = new BitmapImage(new Uri("pack://application:,,,/Assets/Images/wmecen_" + iconColor + "_en.png"));
+            string currentLanguage = readIni.Read("Language");
+            string currentTheme = readIni.Read("Theme");
+            image.Source = new BitmapImage(new Uri("pack://application:,,,/Assets/Images/WMEInfo/wmecen_" + currentLanguage + "_" + currentTheme + ".png"));
 
             Calculate.ExecuteCalc(tbQmax, tbQ07, tbQ04, tbQ025, tbQ015, tbQ010, tbQ005, tbQm, cbG, cbR, lbResult);
 

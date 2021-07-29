@@ -31,6 +31,6 @@
             </ToolTipService.ToolTip>
         </Button>
         <Label HorizontalContentAlignment="Center" FontSize="13" VerticalContentAlignment="Center" Style="{DynamicResource CustomLabelTitle}" Content="{Binding Title,RelativeSource={RelativeSource FindAncestor,AncestorType=Window}}" Width="auto" Height="28" HorizontalAlignment="Center" VerticalAlignment="top" Margin="0,5,0,0"/>
-        <Image Source="pack://application:,,,/Assets/Images/wmeinfo_white_en.png" Stretch="None"/>
+        <Image Name="WMEInfoImg" Source="pack://application:,,,/Assets/Images/WMEInfo/wmeinfo_en-US_light.png" Stretch="None" />
     </Grid>
 </Window>

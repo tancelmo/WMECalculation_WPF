@@ -33,14 +33,14 @@ namespace WMECalculation
                 }
                 catch
                 {
-                    MessageBox.Show(Convert.ToString(mainWindow.FindResource("connectionError03")));
+                    _ = MessageBox.Show(Convert.ToString(mainWindow.FindResource("connectionError03")));
                 }
             }
             else
             {
-                if(iniFile.Read("Language") == "en-US")
+                if (iniFile.Read("Language") == "en-US")
                 {
-                    r1 = Convert.ToDouble(iniFile.Read(Convert.ToString(cb1.SelectedItem), "Gears_Correction").Replace(",","."));
+                    r1 = Convert.ToDouble(iniFile.Read(Convert.ToString(cb1.SelectedItem), "Gears_Correction").Replace(",", "."));
                 }
                 else
                 {
@@ -98,11 +98,11 @@ namespace WMECalculation
             }
             else
             {
-                if(r1 + r2 < 0 && r1 > r2)
+                if (r1 + r2 <= 0 && r1 > r2)
                 {
                     resultGear = Math.Abs(r1 - r2) * -1;
                 }
-                else if (r1 + r2 > 0 && r1 > r2)
+                else if (r1 + r2 >= 0 && r1 > r2)
                 {
                     resultGear = Math.Abs(r1 - r2) * -1;
                 }
@@ -111,7 +111,7 @@ namespace WMECalculation
                 {
                     resultGear = Math.Abs(r1 - r2);
                 }
-                lbResult.Content = ((String.Format("{0:0.00}", resultGear)) + " %");
+                lbResult.Content = string.Format("{0:0.00}", resultGear) + " %";
             }
         }
 
@@ -123,7 +123,7 @@ namespace WMECalculation
             }
             else
             {
-                Qmax.Text = String.Format("{0:0.00}", (Convert.ToDouble(Qmax.Text) + resultFromGears));
+                Qmax.Text = string.Format("{0:0.00}", Convert.ToDouble(Qmax.Text) + resultFromGears);
             }
             if (Q07.Text == "")
             {
@@ -131,7 +131,7 @@ namespace WMECalculation
             }
             else
             {
-                Q07.Text = String.Format("{0:0.00}", ((Convert.ToDouble(Q07.Text) + resultFromGears)));
+                Q07.Text = string.Format("{0:0.00}", ((Convert.ToDouble(Q07.Text) + resultFromGears)));
             }
             if (Q04.Text == "")
             {
@@ -139,7 +139,7 @@ namespace WMECalculation
             }
             else
             {
-                Q04.Text = String.Format("{0:0.00}", ((Convert.ToDouble(Q04.Text) + resultFromGears)));
+                Q04.Text = string.Format("{0:0.00}", ((Convert.ToDouble(Q04.Text) + resultFromGears)));
             }
             if (Q025.Text == "")
             {
@@ -147,7 +147,7 @@ namespace WMECalculation
             }
             else
             {
-                Q025.Text = String.Format("{0:0.00}", ((Convert.ToDouble(Q025.Text) + resultFromGears)));
+                Q025.Text = string.Format("{0:0.00}", ((Convert.ToDouble(Q025.Text) + resultFromGears)));
             }
             if (Q015.Text == "")
             {
@@ -155,7 +155,7 @@ namespace WMECalculation
             }
             else
             {
-                Q015.Text = String.Format("{0:0.00}", ((Convert.ToDouble(Q015.Text) + resultFromGears)));
+                Q015.Text = string.Format("{0:0.00}", ((Convert.ToDouble(Q015.Text) + resultFromGears)));
             }
             if (Q01.Text == "")
             {
@@ -163,7 +163,7 @@ namespace WMECalculation
             }
             else
             {
-                Q01.Text = String.Format("{0:0.00}", ((Convert.ToDouble(Q01.Text) + resultFromGears)));
+                Q01.Text = string.Format("{0:0.00}", ((Convert.ToDouble(Q01.Text) + resultFromGears)));
             }
             if (Q005.Text == "")
             {
@@ -171,7 +171,7 @@ namespace WMECalculation
             }
             else
             {
-                Q005.Text = String.Format("{0:0.00}", ((Convert.ToDouble(Q005.Text) + resultFromGears)));
+                Q005.Text = string.Format("{0:0.00}", ((Convert.ToDouble(Q005.Text) + resultFromGears)));
             }
             if (Qmin.Text == "")
             {
@@ -179,16 +179,17 @@ namespace WMECalculation
             }
             else
             {
-                Qmin.Text = String.Format("{0:0.00}", ((Convert.ToDouble(Qmin.Text) + resultFromGears)));
+                Qmin.Text = string.Format("{0:0.00}", ((Convert.ToDouble(Qmin.Text) + resultFromGears)));
             }
 
             imgGear1.Visibility = Visibility.Visible;
             imgGear2.Visibility = Visibility.Visible;
             lbTittle.Visibility = Visibility.Visible;
-            btnClear.Visibility = Visibility.Visible;
+
             arrow.Visibility = Visibility.Visible;
             gear1.Visibility = Visibility.Visible;
             gear2.Visibility = Visibility.Visible;
+            btnClear.Visibility = Visibility.Visible;
 
         }
 

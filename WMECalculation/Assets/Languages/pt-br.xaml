@@ -1,25 +1,34 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
+
     <!--System Strings-->
-    
-    <system:String x:Key="Tittle">Cálculo EMP</system:String>
-    <system:String x:Key="TittleGearCorrection">Correção de engrenagens</system:String>
+
+    <system:String x:Key="Tittle">Cáculo EMP</system:String>
+    <system:String x:Key="TittleGearCorrection">Correção de Engrenagens</system:String>
+    <system:String x:Key="AboutPage">Sobre o Cálculo EMP</system:String>
+    <system:String x:Key="FormulaInfo">Informações do cálculo</system:String>
     <system:String x:Key="Loading">Carregando</system:String>
+    <system:String x:Key="Version">Versão</system:String>
+    <system:String x:Key="CheckIsNumber">Apenas números são permitidos.</system:String>
+    <system:String x:Key="connectionError01">Não foi possível conectar ao banco de dados #001</system:String>
+    <system:String x:Key="connectionError02">Não foi possível conectar ao banco de dados #002</system:String>
+    <system:String x:Key="connectionError03">Não foi possível conectar ao banco de dados #003</system:String>
+    <system:String x:Key="AppliedCorrection">Aplicado</system:String>
     <system:String x:Key="DbNotFound">Banco de dados não encontrado.</system:String>
-    <system:String x:Key="ConfigNotFound">Arquivo de configuração não encontrado.</system:String>
+    <system:String x:Key="ConfigNotFound">Arquivo config não encontrado.</system:String>
+    <system:String x:Key="StringGearsNotFound">Arquivo String Gears não encontrado.</system:String>
     <system:String x:Key="NoEngine">Este aplicativo precisa do Access Database Engine, por favor faça o download e reinicie o aplicativo.</system:String>
     <system:String x:Key="NoGSize">Nenhuma Designação G selecionada.</system:String>
-    <system:String x:Key="CheckIsNumber">Apenas números são permitidos. Tente novamente.</system:String>
-    <system:String x:Key="connectionError01">Não foi possivel conectar ao banco de dados. #001</system:String>
-    <system:String x:Key="connectionError02">Não foi possivel conectar ao banco de dados. #002</system:String>
+    <system:String x:Key="ClearCorrection">Limpar correção</system:String>
+    <system:String x:Key="InstanceApp">Aplicativo em execução.</system:String>
     <system:String x:Key="Minimize">Minimizar</system:String>
-    <system:String x:Key="Maximize">Maximize</system:String>
-    <system:String x:Key="Restore">Restore Down</system:String>
+    <system:String x:Key="Maximize">Maximizar</system:String>
+    <system:String x:Key="Restore">Restaurar abaixo</system:String>
     <system:String x:Key="Close">Fechar</system:String>
 
-    <!--Standart Strings-->
-    <system:String x:Key="AppliedCorrection">Aplicado</system:String>
+    <!--Text Blocks-->
+
     <TextBlock x:Key="Options" Text="Opções"/>
     <TextBlock x:Key="Language" Text="Idioma"/>
     <TextBlock x:Key="English" Text="Inglês"/>
@@ -45,20 +54,20 @@
     <TextBlock x:Key="Starting" Text="Iniciando..."/>
     <TextBlock x:Key="CheckFiles" Text="Checando arquivos..."/>
     <TextBlock x:Key="InitConnections" Text="Iniciando conexão..."/>
-    <TextBlock x:Key="currentGears" Text="Engranagens Atuais"/>
-    <TextBlock x:Key="newGears" Text="Novas Engranagens"/>
+    <TextBlock x:Key="currentGears" Text="Engrenagens Atuais"/>
+    <TextBlock x:Key="newGears" Text="Novas Engrenagens"/>
     <TextBlock x:Key="percentCorrection" Text="% Correção"/>
     <TextBlock x:Key="btnCalculate" Text="Calcular"/>
     <TextBlock x:Key="lbEngine" Text="Checando Access Database Engine..."/>
-    <TextBlock x:Key="WIP" Text="Em Progresso"/>
-    
-
-
-
-
-
-    <TextBlock x:Key="test">
-       <Bold>Who care's if one more light</Bold><LineBreak/>In the sky, of a million stars.
-    </TextBlock>
+    <TextBlock x:Key="CreditsBy" Text="Icones feitos por"/>
+    <TextBlock x:Key="CreditsFrom" Text="de"/>
+    <TextBlock x:Key="CreditsBy1" Text="Icones feitos por"/>
+    <TextBlock x:Key="CreditsFrom1" Text="de"/>
+    <TextBlock x:Key="CreditsFrom2" Text="Temas por"/>
+    <TextBlock x:Key="CreditsFrom3" Text="Desenvolvido por"/>
+    <TextBlock x:Key="CaclFormulaImg"><Bold>Fórmula do cálculo</Bold><LineBreak/>Clique para mais informações.</TextBlock>
+    <TextBlock x:Key="cbxG" Text="Selecione uma designação G"/>
+    <TextBlock x:Key="cbxRange" Text="Selecione um Range"/>
+    <TextBlock x:Key="LabelResult" FontSize="13" FontWeight="Normal" FontStyle="Normal" FontFamily="Segoe UI" Text="Resultado do cálculo."/>
 
 </ResourceDictionary>

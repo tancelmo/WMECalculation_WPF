@@ -12,7 +12,7 @@ namespace WMECalculation
 
         public static void ExecuteCalc(TextBox tbQmax, TextBox tbQ07, TextBox tbQ04, TextBox tbQ025, TextBox tbQ015, TextBox tbQ010, TextBox tbQ005, TextBox tbQm, ComboBox cbG, ComboBox cbR, Label lbResult)
         {
-            double check, result, Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qmin, Flow, QiQmin, QiQmax = 0, QiQ07 = 0, QiQ04 = 0, QiQ025 = 0, QiQ015 = 0, QiQ010 = 0, QiQ005 = 0, QiQm = 0;
+            double result, Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qmin, Flow, QiQmin, QiQmax = 0, QiQ07 = 0, QiQ04 = 0, QiQ025 = 0, QiQ015 = 0, QiQ010 = 0, QiQ005 = 0, QiQm = 0;
 
             /// TryParse
             
@@ -44,7 +44,7 @@ namespace WMECalculation
                 Q04 = Convert.ToDouble(tbQ04.Text);
                 QiQ04 = 0.4;
             }
-            if (!double.TryParse(tbQ025.Text, out check))
+            if (!double.TryParse(tbQ025.Text, out _))
             {
                 Q025 = 0;
             }
@@ -53,7 +53,7 @@ namespace WMECalculation
                 Q025 = Convert.ToDouble(tbQ025.Text);
                 QiQ025 = 0.25;
             }
-            if (!double.TryParse(tbQ015.Text, out check))
+            if (!double.TryParse(tbQ015.Text, out _))
             {
                 Q015 = 0;
             }
@@ -62,7 +62,7 @@ namespace WMECalculation
                 Q015 = Convert.ToDouble(tbQ015.Text);
                 QiQ015 = 0.15;
             }
-            if (!double.TryParse(tbQ010.Text, out check))
+            if (!double.TryParse(tbQ010.Text, out _))
             {
                 Q010 = 0;
             }
@@ -71,7 +71,7 @@ namespace WMECalculation
                 Q010 = Convert.ToDouble(tbQ010.Text);
                 QiQ010 = 0.1;
             }
-            if (!double.TryParse(tbQ005.Text, out check))
+            if (!double.TryParse(tbQ005.Text, out _))
             {
                 Q005 = 0;
             }
@@ -80,7 +80,7 @@ namespace WMECalculation
                 Q005 = Convert.ToDouble(tbQ005.Text);
                 QiQ005 = 0.05;
             }
-            if (!double.TryParse(tbQm.Text, out check))
+            if (!double.TryParse(tbQm.Text, out _))
             {
                 Qmin = 0;
                 
@@ -89,7 +89,7 @@ namespace WMECalculation
             {
                 Qmin = Convert.ToDouble(tbQm.Text);
 
-                var iniFile = new IniFile("config.ini");
+                IniFile iniFile = new IniFile("config.ini");
 
                 if (iniFile.Read("Database") == "Access")
                 {
@@ -134,7 +134,7 @@ namespace WMECalculation
                 sum += QiValues[i] * lbValues[i];
             }
 
-            result = sum / (QiValues.Sum());
+            result = sum / QiValues.Sum();
             lbResult.Content = string.Format("{0:0.00}", result);
             
             if (Double.IsNaN(result))
@@ -154,7 +154,7 @@ namespace WMECalculation
             {
                 lbResult.Foreground = Brushes.Red;
             }
-            else if (result <= 0.404 && result >= 0.40 || result > -0.404 && result < -0.4)
+            else if ((result <= 0.404 && result >= 0.40) || result > -0.404 && result < -0.4)
             {
                 lbResult.Foreground = Brushes.Orange;
             }

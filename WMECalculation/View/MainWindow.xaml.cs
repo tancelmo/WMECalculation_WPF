@@ -22,7 +22,7 @@ namespace WMECalculation
         public MainWindow()
         {
             InitializeComponent();
-   
+
             ///
             /// 1 instance
             /// 
@@ -41,7 +41,7 @@ namespace WMECalculation
             
             loading.CheckFiles.Visibility = Visibility.Visible;
             StdFunctions.CheckConfigFiles(this);
-            StdFunctions.StartUP(this, menuDark, menuLight, menuLang, menuTheme, menuCorrection, menuAbout, img, lbResult);
+            StdFunctions.StartUP(this, img, lbResult);
             StdFunctions.CheckDbFiles(this);
             loading.CheckFiles.Visibility = Visibility.Hidden;
 
@@ -74,24 +74,27 @@ namespace WMECalculation
             Close();
         }
 
+        private void MenuEn_Click(object sender, RoutedEventArgs e)
+        {
+            StdFunctions.SetLanguage(this, "en-US", lbResult, img);
+        }
         private void MenuPt_Click(object sender, RoutedEventArgs e)
         {
-            StdFunctions.SetLanguage(this, "pt-BR", lbResult);
+            StdFunctions.SetLanguage(this, "pt-BR", lbResult, img);
+        }
+        private void menuES_Click(object sender, RoutedEventArgs e)
+        {
+            StdFunctions.SetLanguage(this, "es-ES", lbResult, img);
         }
 
         private void MenuDark_Click(object sender, RoutedEventArgs e)
         {
-            StdFunctions.ChangeTheme(this, "Dark", "white", menuDark, menuLight, menuLang, menuTheme, menuCorrection, menuAbout, Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, comboBoxG, comboBoxR, lbResult, img);
-        }
-
-        private void MenuEn_Click(object sender, RoutedEventArgs e)
-        {
-            StdFunctions.SetLanguage(this, "en-US", lbResult);
+            StdFunctions.ChangeTheme(this, "Dark", Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, comboBoxG, comboBoxR, lbResult, img);
         }
 
         private void MenuLight_Click(object sender, RoutedEventArgs e)
         {
-            StdFunctions.ChangeTheme(this, "Light", "black", menuDark, menuLight, menuLang, menuTheme, menuCorrection, menuAbout, Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, comboBoxG, comboBoxR, lbResult, img);
+            StdFunctions.ChangeTheme(this, "Light", Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, comboBoxG, comboBoxR, lbResult, img);
         }
 
         private void menuCorrection_Click(object sender, RoutedEventArgs e)
@@ -108,7 +111,7 @@ namespace WMECalculation
                 if (CalculateGears.checkCalutateBtn)
                 {
                     resultFromGears = CalculateGears.resultGear;
-                    CalculateGears.ApplyCalculatedGears(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, resultFromGears, imgGear1, imgGear2, arrow, gearValue1, gearValue2, lbTittle, btnClear);
+                    CalculateGears.ApplyCalculatedGears(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, resultFromGears, imgGear1, imgGear2, lbTittle, arrow, gearValue1, gearValue2, btnClear);
                     Calculate.ExecuteCalc(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, comboBoxG, comboBoxR, lbResult);
                     StdFunctions.GearsImg(imgGear1, gearCorrection.cbCurrentGears);
                     StdFunctions.GearsImg(imgGear2, gearCorrection.cbNewGears);
@@ -264,5 +267,6 @@ namespace WMECalculation
         {
             DragMove();
         }
+
     }
 }
