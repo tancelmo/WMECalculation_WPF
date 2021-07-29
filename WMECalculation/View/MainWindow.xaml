@@ -68,7 +68,7 @@
                     </MenuItem.Icon>
                     <MenuItem Name="menuEn" Height="30"  Click="MenuEn_Click" Header="{DynamicResource English}" Template="{DynamicResource SingleDropDownMenuItem}"/>
                     <MenuItem Name="menuPt" Height="30"  Click="MenuPt_Click" Header="{DynamicResource Portuguese}" Template="{DynamicResource SingleDropDownMenuItem}"/>
-                    <MenuItem Height="30" ToolTip="{DynamicResource WIP}" Header="{DynamicResource Spanish}" Template="{DynamicResource SingleDropDownMenuItem}"/>
+                    <MenuItem Name="menuES" Height="30"  Click="menuES_Click" Header="{DynamicResource Spanish}" Template="{DynamicResource SingleDropDownMenuItem}"/>
                 </MenuItem>
 
                 <MenuItem Name="menuTheme" Height="30" Header="{DynamicResource Theme}" Template="{DynamicResource DropDownMenuItemStyle}">
@@ -104,7 +104,7 @@
         <Label Content="{DynamicResource GSize}" HorizontalAlignment="Left" FontSize="13" VerticalAlignment="Top" Margin="10,40"/>
         <ComboBox MouseEnter="comboBoxG_MouseEnter" ToolTip="{DynamicResource cbxG}" Name="comboBoxG" FontSize="13" SelectionChanged="comboBoxG_SelectionChanged" Height="25" Width="82" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,70"/>
         <Label Content="{DynamicResource Range}" HorizontalAlignment="Left" FontSize="13" VerticalAlignment="Top" Margin="104,40,0,0"/>
-        <ComboBox MouseEnter="comboBoxR_MouseEnter" ToolTip="{DynamicResource cbxRange}" Name="comboBoxR" FontSize="13" SelectionChanged="comboBoxR_SelectionChanged" Height="25" Width="60" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="108,70,0,0"/>
+        <ComboBox MouseEnter="comboBoxR_MouseEnter" ToolTip="{DynamicResource cbxRange}" Name="comboBoxR" FontSize="13" SelectionChanged="comboBoxR_SelectionChanged" Height="25" Width="60" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="108,70,0,0" Text="{DynamicResource Tittle}"/>
 
         <Button x:Name="btnClear"
                 UseLayoutRounding="True"
@@ -138,7 +138,7 @@
 
 
         <GroupBox Header="{DynamicResource Formula}" FontSize="13" Height="78" Width="154" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,105,0,0">
-            <Image Name="img" MouseDown="img_MouseDown" ToolTip="{DynamicResource CaclFormulaImg}" Source="pack://application:,,,/Assets/Images/wmecen_black_en.png"/>
+            <Image Name="img" MouseDown="img_MouseDown" ToolTip="{DynamicResource CaclFormulaImg}" Source="pack://application:,,,/Assets/Images/WMEInfo/wmecen_pt-BR_dark.png"/>
         </GroupBox>
         <GroupBox Header="{DynamicResource Result}" FontSize="13" Height="78" Width="123" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,105,0,0">
             <StackPanel Margin="0,-4,0,0">

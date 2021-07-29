@@ -1,0 +1,73 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!--System Strings-->
+
+    <system:String x:Key="Tittle">Cálculo EMP</system:String>
+    <system:String x:Key="TittleGearCorrection">Corrección de Engranajes</system:String>
+    <system:String x:Key="AboutPage">Acerca de la Cálculo EMP</system:String>
+    <system:String x:Key="FormulaInfo">Información de Cálculo EMP</system:String>
+    <system:String x:Key="Loading">Cargando</system:String>
+    <system:String x:Key="Version">Versión</system:String>
+    <system:String x:Key="CheckIsNumber">Solo se permiten números.</system:String>
+    <system:String x:Key="connectionError01">No se pudo conectar a la base de datos #001</system:String>
+    <system:String x:Key="connectionError02">No se pudo conectar a la base de datos #002</system:String>
+    <system:String x:Key="connectionError03">No se pudo conectar a la base de datos #003</system:String>
+    <system:String x:Key="AppliedCorrection">Aplicada</system:String>
+    <system:String x:Key="DbNotFound">No se encontró la base de datos.</system:String>
+    <system:String x:Key="ConfigNotFound">No se encontró el archivo de configuración.</system:String>
+    <system:String x:Key="StringGearsNotFound">No se encontró el archivo String Gears.</system:String>
+    <system:String x:Key="NoEngine">Esta aplicación necesita Access Database Engine, descargue y reinicie la aplicación.</system:String>
+    <system:String x:Key="NoGSize">No se seleccionó ninguna designación G.</system:String>
+    <system:String x:Key="ClearCorrection">Corrección clara</system:String>
+    <system:String x:Key="InstanceApp">Aplicación ya abierta.</system:String>
+    <system:String x:Key="Minimize">Minimizar</system:String>
+    <system:String x:Key="Maximize">Maximizar</system:String>
+    <system:String x:Key="Restore">Restore Down</system:String>
+    <system:String x:Key="Close">Cerrar</system:String>
+
+    <!--Text Blocks-->
+
+    <TextBlock x:Key="Options" Text="Opciones"/>
+    <TextBlock x:Key="Language" Text="Idioma"/>
+    <TextBlock x:Key="English" Text="Inglés"/>
+    <TextBlock x:Key="Portuguese" Text="Portugués"/>
+    <TextBlock x:Key="Spanish" Text="Español"/>
+    <TextBlock x:Key="Theme" Text="Temas"/>
+    <TextBlock x:Key="Correction" Text="Simular Corrección"/>
+    <TextBlock x:Key="GSize" Text="Designación G"/>
+    <TextBlock x:Key="Range" Text="Rango"/>
+    <TextBlock x:Key="Formula" Text="Fórmula"/>
+    <TextBlock x:Key="Result" Text="Result"/>
+    <TextBlock x:Key="Errors" Text="Errores"/>
+    <TextBlock x:Key="Qi" Text="Qi / Qmax"/>
+    <TextBlock x:Key="About" Text="Acerca"/>
+    <TextBlock x:Key="WeightFactor" Text="Factor de peso"/>
+    <TextBlock x:Key="WeightFactor1" Text="Factor de peso"/>
+    <TextBlock x:Key="WeightFactor2" Text="Factor de peso"/>
+    <TextBlock x:Key="WeightFactor3" Text="Factor de peso"/>
+    <TextBlock x:Key="WeightFactor4" Text="Factor de peso"/>
+    <TextBlock x:Key="WeightFactor5" Text="Factor de peso"/>
+    <TextBlock x:Key="WeightFactor6" Text="Factor de peso"/>
+    <TextBlock x:Key="WeightFactor7" Text="Factor de peso"/>
+    <TextBlock x:Key="Starting" Text="Comenzando..."/>
+    <TextBlock x:Key="CheckFiles" Text="Comprobando archivos..."/>
+    <TextBlock x:Key="InitConnections" Text="Comenzando la conexión..."/>
+    <TextBlock x:Key="currentGears" Text="Engranajes actuales"/>
+    <TextBlock x:Key="newGears" Text="Nuevas engranajes"/>
+    <TextBlock x:Key="percentCorrection" Text="% Corrección"/>
+    <TextBlock x:Key="btnCalculate" Text="Calcular"/>
+    <TextBlock x:Key="lbEngine" Text="Comprobación del Access Database Engine..."/>
+    <TextBlock x:Key="CreditsBy" Text="Icons made by"/>
+    <TextBlock x:Key="CreditsFrom" Text="from"/>
+    <TextBlock x:Key="CreditsBy1" Text="Icons made by"/>
+    <TextBlock x:Key="CreditsFrom1" Text="from"/>
+    <TextBlock x:Key="CreditsFrom2" Text="Temas por"/>
+    <TextBlock x:Key="CreditsFrom3" Text="Desarrollado por"/>
+    <TextBlock x:Key="CaclFormulaImg"><Bold>Fórmula de Cálculo</Bold><LineBreak/>Haga clic para obtener más información.</TextBlock>
+    <TextBlock x:Key="cbxG" Text="Seleccione una Designación G"/>
+    <TextBlock x:Key="cbxRange" Text="Seleccione un rango"/>
+    <TextBlock x:Key="LabelResult" FontSize="13" FontWeight="Normal" FontStyle="Normal" FontFamily="Segoe UI" Text="Resultado del cálculo."/>
+
+</ResourceDictionary>

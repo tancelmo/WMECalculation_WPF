@@ -1,12 +1,34 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
+    
+    <!--System Strings-->
+    
     <system:String x:Key="Tittle">WME Calculation</system:String>
     <system:String x:Key="TittleGearCorrection">Gear Correction</system:String>
     <system:String x:Key="AboutPage">About WME Calculation</system:String>
     <system:String x:Key="FormulaInfo">WME Calculation Info</system:String>
     <system:String x:Key="Loading">Loading</system:String>
     <system:String x:Key="Version">Version</system:String>
+    <system:String x:Key="CheckIsNumber">Only numbers are allowed. Try again.</system:String>
+    <system:String x:Key="connectionError01">Could not connect to the database #001</system:String>
+    <system:String x:Key="connectionError02">Could not connect to the database #002</system:String>
+    <system:String x:Key="connectionError03">Could not connect to the database #003</system:String>
+    <system:String x:Key="AppliedCorrection">Applied</system:String>
+    <system:String x:Key="DbNotFound">Database not found.</system:String>
+    <system:String x:Key="ConfigNotFound">Config file not found.</system:String>
+    <system:String x:Key="StringGearsNotFound">String Gears file not found.</system:String>
+    <system:String x:Key="NoEngine">This application needs Access Database Engine, please download and restart the application.</system:String>
+    <system:String x:Key="NoGSize">No G Size selected.</system:String>
+    <system:String x:Key="ClearCorrection">Clear correction</system:String>
+    <system:String x:Key="InstanceApp">Application already open.</system:String>
+    <system:String x:Key="Minimize">Minimize</system:String>
+    <system:String x:Key="Maximize">Maximize</system:String>
+    <system:String x:Key="Restore">Restore Down</system:String>
+    <system:String x:Key="Close">Close</system:String>
+    
+    <!--Text Blocks-->
+    
     <TextBlock x:Key="Options" Text="Options"/>
     <TextBlock x:Key="Language" Text="Language"/>
     <TextBlock x:Key="English" Text="English"/>
@@ -21,10 +43,6 @@
     <TextBlock x:Key="Errors" Text="Errors"/>
     <TextBlock x:Key="Qi" Text="Qi / Qmax"/>
     <TextBlock x:Key="About" Text="About"/>
-    <system:String x:Key="CheckIsNumber">Only numbers are allowed. Try again.</system:String>
-    <system:String x:Key="connectionError01">Could not connect to the database #001</system:String>
-    <system:String x:Key="connectionError02">Could not connect to the database #002</system:String>
-    <system:String x:Key="connectionError03">Could not connect to the database #003</system:String>
     <TextBlock x:Key="WeightFactor" Text="Weight Factor"/>
     <TextBlock x:Key="WeightFactor1" Text="Weight Factor"/>
     <TextBlock x:Key="WeightFactor2" Text="Weight Factor"/>
@@ -34,7 +52,7 @@
     <TextBlock x:Key="WeightFactor6" Text="Weight Factor"/>
     <TextBlock x:Key="WeightFactor7" Text="Weight Factor"/>
     <TextBlock x:Key="Starting" Text="Starting..."/>
-    <TextBlock x:Key="CheckFiles" Text="Cheking files..."/>
+    <TextBlock x:Key="CheckFiles" Text="Checking files..."/>
     <TextBlock x:Key="InitConnections" Text="Starting Connection..."/>
     <TextBlock x:Key="currentGears" Text="Current Gears"/>
     <TextBlock x:Key="newGears" Text="New Gears"/>
@@ -47,35 +65,9 @@
     <TextBlock x:Key="CreditsFrom1" Text="from"/>
     <TextBlock x:Key="CreditsFrom2" Text="Themes by"/>
     <TextBlock x:Key="CreditsFrom3" Text="Developed by"/>
-    <system:String x:Key="AppliedCorrection">Applied</system:String>
-    <system:String x:Key="DbNotFound">Database not found.</system:String>
-    <system:String x:Key="ConfigNotFound">Config file not found.</system:String>
-    <system:String x:Key="StringGearsNotFound">String Gears file not found.</system:String>
-    <system:String x:Key="NoEngine">This applicatiton needs Access Database Engine, please download and restart the application.</system:String>
-    <system:String x:Key="NoGSize">No G Size selected.</system:String>
-    <system:String x:Key="ClearCorrection">Clear correction</system:String>
-    <system:String x:Key="InstanceApp">Application already open.</system:String>
-    <TextBlock x:Key="WIP" Text="WIP"/>
     <TextBlock x:Key="CaclFormulaImg"><Bold>Calculation Formula</Bold><LineBreak/>Click for more information.</TextBlock>
     <TextBlock x:Key="cbxG" Text="Select a G Size"/>
     <TextBlock x:Key="cbxRange" Text="Select a Range"/>
     <TextBlock x:Key="LabelResult" FontSize="13" FontWeight="Normal" FontStyle="Normal" FontFamily="Segoe UI" Text="Calculation result."/>
-
-
-
-
-
-
-
-
-
-
-    <system:String x:Key="Minimize">Minimize</system:String>
-    <system:String x:Key="Maximize">Maximize</system:String>
-    <system:String x:Key="Restore">Restore Down</system:String>
-    <system:String x:Key="Close">Close</system:String>
-    <TextBlock x:Key="test">
-       <Bold>Who care's if one more light</Bold><LineBreak/>In the sky, of a million stars.
-    </TextBlock>
     
 </ResourceDictionary>

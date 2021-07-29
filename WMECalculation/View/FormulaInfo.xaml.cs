@@ -22,7 +22,7 @@ namespace WMECalculation.View
         public FormulaInfo()
         {
             InitializeComponent();
-            StdFunctions.LoadGearCorrection(this);
+            StdFunctions.LoadGearWMEInfo(this, WMEInfoImg);
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
