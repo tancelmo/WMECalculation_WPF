@@ -39,7 +39,7 @@
     <TextBlock x:Key="GSize" Text="Designación G"/>
     <TextBlock x:Key="Range" Text="Rango"/>
     <TextBlock x:Key="Formula" Text="Fórmula"/>
-    <TextBlock x:Key="Result" Text="Result"/>
+    <TextBlock x:Key="Result" Text="Resultado"/>
     <TextBlock x:Key="Errors" Text="Errores"/>
     <TextBlock x:Key="Qi" Text="Qi / Qmax"/>
     <TextBlock x:Key="About" Text="Acerca"/>
