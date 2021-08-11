@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WMECalculation"
         mc:Ignorable="d"
+        Language="en-US"
         Width="320" Height="565"
         WindowStartupLocation="CenterScreen"
         Style="{DynamicResource CustomWindowStyle}"
@@ -68,7 +69,7 @@
                     </MenuItem.Icon>
                     <MenuItem Name="menuEn" Height="30"  Click="MenuEn_Click" Header="{DynamicResource English}" Template="{DynamicResource SingleDropDownMenuItem}"/>
                     <MenuItem Name="menuPt" Height="30"  Click="MenuPt_Click" Header="{DynamicResource Portuguese}" Template="{DynamicResource SingleDropDownMenuItem}"/>
-                    <MenuItem Name="menuES" Height="30"  Click="menuES_Click" Header="{DynamicResource Spanish}" Template="{DynamicResource SingleDropDownMenuItem}"/>
+                    <MenuItem Name="menuES" Height="30"  Click="MenuES_Click" Header="{DynamicResource Spanish}" Template="{DynamicResource SingleDropDownMenuItem}"/>
                 </MenuItem>
 
                 <MenuItem Name="menuTheme" Height="30" Header="{DynamicResource Theme}" Template="{DynamicResource DropDownMenuItemStyle}">

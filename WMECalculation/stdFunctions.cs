@@ -64,6 +64,8 @@ namespace WMECalculation
                 ResourceDictionary newRes = new ResourceDictionary();
                 newRes.Source = new Uri("/Assets/Languages/en-US.xaml", UriKind.RelativeOrAbsolute);
                 mainWindow.Resources.MergedDictionaries.Add(newRes);
+                Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
                 result.Content = "0.00";
             }
 
@@ -400,7 +402,7 @@ namespace WMECalculation
         public static void CheckKeyPress(TextBox checkKeyPress, KeyEventArgs e)
         {
             var iniFile = new IniFile("config.ini");
-            if(iniFile.Read("Language") == "pt-BR")
+            if(iniFile.Read("Language") == "pt-BR" || iniFile.Read("Language") == "es-ES")
             {
                 if ((char)e.Key >= 44 && (char)e.Key <= 69) // || (char)e.Key == 88)
                 {  //limitar caracteres  a numeros virgula 
@@ -849,6 +851,18 @@ namespace WMECalculation
             lbResult.Content = "0,00";
             lbResult.ClearValue(Control.ForegroundProperty);
             window.Height = 555;
+        }
+
+        public static void ClearValues(TextBox Qmax, TextBox Q07, TextBox Q04, TextBox Q025, TextBox Q015, TextBox Q01, TextBox Q005, TextBox Qmin)
+        {
+            Qmax.Clear();
+            Q07.Clear();
+            Q04.Clear();
+            Q025.Clear();
+            Q015.Clear();
+            Q01.Clear();
+            Q005.Clear();
+            Qmin.Clear();
         }
     }
 }

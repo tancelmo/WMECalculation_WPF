@@ -28,7 +28,8 @@
     <system:String x:Key="Close">Close</system:String>
     
     <!--Text Blocks-->
-    
+
+
     <TextBlock x:Key="Options" Text="Options"/>
     <TextBlock x:Key="Language" Text="Language"/>
     <TextBlock x:Key="English" Text="English"/>

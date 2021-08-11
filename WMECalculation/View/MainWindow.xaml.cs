@@ -77,14 +77,17 @@ namespace WMECalculation
         private void MenuEn_Click(object sender, RoutedEventArgs e)
         {
             StdFunctions.SetLanguage(this, "en-US", lbResult, img);
+            StdFunctions.ClearValues(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm);
         }
         private void MenuPt_Click(object sender, RoutedEventArgs e)
         {
             StdFunctions.SetLanguage(this, "pt-BR", lbResult, img);
+            StdFunctions.ClearValues(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm);
         }
-        private void menuES_Click(object sender, RoutedEventArgs e)
+        private void MenuES_Click(object sender, RoutedEventArgs e)
         {
             StdFunctions.SetLanguage(this, "es-ES", lbResult, img);
+            StdFunctions.ClearValues(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm);
         }
 
         private void MenuDark_Click(object sender, RoutedEventArgs e)

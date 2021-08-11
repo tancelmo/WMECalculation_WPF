@@ -3,7 +3,7 @@
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
 
     <!--System Strings-->
-
+    
     <system:String x:Key="Tittle">Cálculo EMP</system:String>
     <system:String x:Key="TittleGearCorrection">Corrección de Engranajes</system:String>
     <system:String x:Key="AboutPage">Acerca de la Cálculo EMP</system:String>
@@ -28,6 +28,7 @@
     <system:String x:Key="Close">Cerrar</system:String>
 
     <!--Text Blocks-->
+
 
     <TextBlock x:Key="Options" Text="Opciones"/>
     <TextBlock x:Key="Language" Text="Idioma"/>

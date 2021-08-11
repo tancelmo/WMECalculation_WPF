@@ -108,6 +108,14 @@ namespace WMECalculation
                     }
                     conn.disconnect();
                 }
+                else if(iniFile.Read("Language") == "en-US")
+                {
+                    Flow = Convert.ToDouble(iniFile.Read(Convert.ToString(cbG.SelectedItem), "Qmax_Flow"));
+                    QiQmin = Convert.ToDouble(iniFile.Read(Convert.ToString(cbR.SelectedItem), "Qmin_" + Convert.ToString(cbG.SelectedItem)).Replace(",", "."));
+
+                    QiQm = QiQmin / Flow;
+                    
+                }
                 else
                 {
                     Flow = Convert.ToDouble(iniFile.Read(Convert.ToString(cbG.SelectedItem), "Qmax_Flow"));
@@ -137,7 +145,7 @@ namespace WMECalculation
             result = sum / QiValues.Sum();
             lbResult.Content = string.Format("{0:0.00}", result);
             
-            if (Double.IsNaN(result))
+            if (double.IsNaN(result))
             {
                 if(readIni.Read("Language") == "en-US")
                 {
