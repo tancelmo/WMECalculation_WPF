@@ -59,10 +59,10 @@
     <TextBlock x:Key="percentCorrection" Text="% Correção"/>
     <TextBlock x:Key="btnCalculate" Text="Calcular"/>
     <TextBlock x:Key="lbEngine" Text="Checando Access Database Engine..."/>
-    <TextBlock x:Key="CreditsBy" Text="Icones feitos por"/>
-    <TextBlock x:Key="CreditsFrom" Text="de"/>
-    <TextBlock x:Key="CreditsBy1" Text="Icones feitos por"/>
-    <TextBlock x:Key="CreditsFrom1" Text="de"/>
+    <TextBlock x:Key="CreditsBy" Text="Icons made by"/>
+    <TextBlock x:Key="CreditsFrom" Text="from"/>
+    <TextBlock x:Key="CreditsBy1" Text="Icons made by"/>
+    <TextBlock x:Key="CreditsFrom1" Text="from"/>
     <TextBlock x:Key="CreditsFrom2" Text="Temas por"/>
     <TextBlock x:Key="CreditsFrom3" Text="Desenvolvido por"/>
     <TextBlock x:Key="CaclFormulaImg"><Bold>Fórmula do cálculo</Bold><LineBreak/>Clique para mais informações.</TextBlock>
