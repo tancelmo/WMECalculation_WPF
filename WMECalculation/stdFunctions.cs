@@ -7,6 +7,7 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace WMECalculation
@@ -863,6 +864,33 @@ namespace WMECalculation
             Q01.Clear();
             Q005.Clear();
             Qmin.Clear();
+        }
+
+        public static void ColorFromGearsText(TextBox Qmax, TextBox Q07, TextBox Q04, TextBox Q025, TextBox Q015, TextBox Q01, TextBox Q005, TextBox Qmin, bool Check)
+        {
+            if (Check == true)
+            {
+                Qmax.Foreground = Brushes.Green;
+                Q07.Foreground = Brushes.Green;
+                Q04.Foreground = Brushes.Green;
+                Q025.Foreground = Brushes.Green;
+                Q015.Foreground = Brushes.Green;
+                Q01.Foreground = Brushes.Green;
+                Q005.Foreground = Brushes.Green;
+                Qmin.Foreground = Brushes.Green;
+            }
+            else
+            {
+                Qmax.ClearValue(Control.ForegroundProperty);
+                Q07.ClearValue(Control.ForegroundProperty);
+                Q04.ClearValue(Control.ForegroundProperty);
+                Q025.ClearValue(Control.ForegroundProperty);
+                Q015.ClearValue(Control.ForegroundProperty);
+                Q01.ClearValue(Control.ForegroundProperty);
+                Q005.ClearValue(Control.ForegroundProperty);
+                Qmin.ClearValue(Control.ForegroundProperty);
+            }
+            
         }
     }
 }

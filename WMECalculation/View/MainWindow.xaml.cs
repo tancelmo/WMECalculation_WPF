@@ -121,6 +121,7 @@ namespace WMECalculation
                     lbTittle.Content = Convert.ToString(FindResource("AppliedCorrection")) + " " + string.Format("{0:0.00}", resultFromGears) + " %";
                     gearValue1.Content = gearCorrection.cbCurrentGears.Text.Substring(0, 5);
                     gearValue2.Content = gearCorrection.cbNewGears.Text.Substring(0, 5);
+                    StdFunctions.ColorFromGearsText(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, CalculateGears.checkCalutateBtn);
                 }
             }
         }
@@ -246,6 +247,7 @@ namespace WMECalculation
             CalculateGears.ApplyCalculatedGears(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, resultFromGears, imgGear1, imgGear2, arrow, gearValue1, gearValue2, lbTittle, btnClear);
             CalculateGears.ResetCalc(imgGear1, imgGear2, arrow, lbTittle, gearValue1, gearValue2, btnClear);
             Calculate.ExecuteCalc(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, comboBoxG, comboBoxR, lbResult);
+            StdFunctions.ColorFromGearsText(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, CalculateGears.checkCalutateBtn = false);
 
         }
 

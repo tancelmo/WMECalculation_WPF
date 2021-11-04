@@ -127,7 +127,7 @@
                 <TextBlock FontWeight="{x:Static SystemFonts.MessageFontWeight}" FontFamily="{x:Static SystemFonts.CaptionFontFamily}" FontSize="{x:Static SystemFonts.IconFontSize}" Text="{DynamicResource ClearCorrection}"/>
             </ToolTipService.ToolTip>
         </Button>
-        <Label x:Name="lbTittle" x:FieldModifier="public" Visibility="Hidden" Width="122" Height="27" HorizontalContentAlignment="Center" FontSize="13" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="180,34,0,0" Content="{DynamicResource AppliedCorrection}" />
+        <Label x:Name="lbTittle" x:FieldModifier="public" Visibility="Hidden" Foreground="Green" Width="122" Height="27" HorizontalContentAlignment="Center" FontSize="13" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="180,34,0,0" Content="{DynamicResource AppliedCorrection}" />
         <Image x:Name="imgGear1" x:FieldModifier="public" Visibility="Hidden" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="207,62,0,0" Source="pack://application:,,,/Assets/images/32_40.png"/>
         <Label x:Name="arrow" x:FieldModifier="public" Visibility="Hidden" FontSize="10" FontFamily="pack://application:,,,/Assets/Fonts/#Segoe MDL2 Assets" Content="&#xF0AF;" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="229,62,0,0" RenderTransformOrigin="1.35,0.583"/>
         <Image x:Name="imgGear2" x:FieldModifier="public" Visibility="Hidden" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="251,62,0,0" Source="pack://application:,,,/Assets/images/32_40.png"/>
@@ -139,7 +139,7 @@
 
 
         <GroupBox Header="{DynamicResource Formula}" FontSize="13" Height="78" Width="154" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,105,0,0">
-            <Image Name="img" MouseDown="img_MouseDown" ToolTip="{DynamicResource CaclFormulaImg}" Source="pack://application:,,,/Assets/Images/WMEInfo/wmecen_pt-BR_dark.png"/>
+            <Image Name="img" MouseDown="img_MouseDown" ToolTip="{DynamicResource CaclFormulaImg}" Source="pack://application:,,,/Assets/Images/WMEInfo/wmecen_en-US_light.png"/>
         </GroupBox>
         <GroupBox Header="{DynamicResource Result}" FontSize="13" Height="78" Width="123" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,105,0,0">
             <StackPanel Margin="0,-4,0,0">

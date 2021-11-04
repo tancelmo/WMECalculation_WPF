@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.OleDb;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -38,14 +39,11 @@ namespace WMECalculation
             }
             else
             {
-                if (iniFile.Read("Language") == "en-US")
-                {
-                    r1 = Convert.ToDouble(iniFile.Read(Convert.ToString(cb1.SelectedItem), "Gears_Correction").Replace(",", "."));
-                }
-                else
-                {
-                    r1 = Convert.ToDouble(iniFile.Read(Convert.ToString(cb1.SelectedItem), "Gears_Correction"));
-                }
+               
+                    r1 = Convert.ToDouble(iniFile.Read(Convert.ToString(cb1.SelectedItem), "Gears_Correction"), CultureInfo.InvariantCulture);
+                    
+                    
+                
 
             }
 
@@ -78,14 +76,9 @@ namespace WMECalculation
             }
             else
             {
-                if (iniFile.Read("Language") == "en-US")
-                {
-                    r2 = Convert.ToDouble(iniFile.Read(Convert.ToString(cb2.SelectedItem), "Gears_Correction").Replace(",", "."));
-                }
-                else
-                {
-                    r2 = Convert.ToDouble(iniFile.Read(Convert.ToString(cb2.SelectedItem), "Gears_Correction"));
-                }
+                
+                    r2 = Convert.ToDouble(iniFile.Read(Convert.ToString(cb2.SelectedItem), "Gears_Correction"), CultureInfo.InvariantCulture);
+                
             }
 
         }
