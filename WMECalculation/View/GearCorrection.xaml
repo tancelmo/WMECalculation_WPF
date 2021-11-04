@@ -44,7 +44,7 @@
             <Label Content="{DynamicResource newGears}" Margin="10,58,0,0" Height="30" VerticalAlignment="Top" FontSize="13"/>
             <ComboBox MouseEnter="cbNewGears_MouseEnter" FontSize="13" SelectionChanged="cbNewGears_SelectionChanged" Name="cbNewGears" Width="120" Height="25" Margin="15,83,0,10" HorizontalAlignment="Left"/>
             <GroupBox Header="{DynamicResource percentCorrection}" FontSize="13" Grid.Column="1" Width="110" HorizontalAlignment="Right" Margin="0,9,15,45">
-                <Label Name="lbCalcGears" Content="0,00 %" HorizontalAlignment="Center" FontSize="16"/>
+                <Label Name="lbCalcGears" Content="0 %" HorizontalAlignment="Center" FontSize="16"/>
             </GroupBox>
             <Button Name="btnCalculate" Click="btnCalculate_Click" FontSize="13" Content="{DynamicResource btnCalculate}" Grid.Column="1" Width="110" HorizontalAlignment="Right" Height="25" Margin="0,83,15,10"/>
         </Grid>

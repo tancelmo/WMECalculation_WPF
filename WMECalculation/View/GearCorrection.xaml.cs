@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,7 @@ namespace WMECalculation
             InitializeComponent();
             StdFunctions.LoadGearCorrection(this);
             StdFunctions.AddGears(cbCurrentGears, cbNewGears, this);
+            lbCalcGears.Content = string.Format("{0:0.00}", 0) + " %";
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)

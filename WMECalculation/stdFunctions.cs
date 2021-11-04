@@ -40,7 +40,6 @@ namespace WMECalculation
                 mainWindow.Resources.MergedDictionaries.Add(newRes);
                 Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
                 Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
-                result.Content = "0.00";
             }
             else if (currentLanguage == "pt-BR")
             {
@@ -49,7 +48,6 @@ namespace WMECalculation
                 mainWindow.Resources.MergedDictionaries.Add(newRes);
                 Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("pt-BR");
                 Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("pt-BR");
-                result.Content = "0,00";
             }
             else if (currentLanguage == "es-ES")
             {
@@ -58,7 +56,6 @@ namespace WMECalculation
                 mainWindow.Resources.MergedDictionaries.Add(newRes);
                 Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("es-ES");
                 Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("es-ES");
-                result.Content = "0,00";
             }
             else
             {
@@ -67,7 +64,7 @@ namespace WMECalculation
                 mainWindow.Resources.MergedDictionaries.Add(newRes);
                 Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
                 Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
-                result.Content = "0.00";
+                
             }
 
             if (currentTheme == "Light")
@@ -92,6 +89,8 @@ namespace WMECalculation
                 newRes.Source = new Uri("/Themes/Light.xaml", UriKind.RelativeOrAbsolute);
                 mainWindow.Resources.MergedDictionaries.Add(newRes);
             }
+
+            result.Content = string.Format("{0:0.00}", 0);
 
         }
 
@@ -359,14 +358,8 @@ namespace WMECalculation
             image.Source = new BitmapImage(new Uri("pack://application:,,,/Assets/Images/WMEInfo/wmecen_" + currentLanguage + "_" + currentTheme + ".png"));
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(language);
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
-            if(language == "en-US")
-            {
-                result.Content = "0.00";
-            }
-            else
-            {
-                result.Content = "0,00";
-            }
+
+            result.Content = string.Format("{0:0.00}", 0);
         }
 
         public static void ChangeTheme(Window window, string theme, TextBox tbQmax, TextBox tbQ07, TextBox tbQ04, TextBox tbQ025, TextBox tbQ015, TextBox tbQ010, TextBox tbQ005, TextBox tbQm, ComboBox cbG, ComboBox cbR, Label lbResult, Image image)

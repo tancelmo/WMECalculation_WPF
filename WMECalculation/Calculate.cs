@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.OleDb;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -108,21 +109,15 @@ namespace WMECalculation
                     }
                     conn.disconnect();
                 }
-                else if(iniFile.Read("Language") == "en-US")
+                else 
                 {
-                    Flow = Convert.ToDouble(iniFile.Read(Convert.ToString(cbG.SelectedItem), "Qmax_Flow"));
-                    QiQmin = Convert.ToDouble(iniFile.Read(Convert.ToString(cbR.SelectedItem), "Qmin_" + Convert.ToString(cbG.SelectedItem)).Replace(",", "."));
+                    Flow = Convert.ToDouble(iniFile.Read(Convert.ToString(cbG.SelectedItem), "Qmax_Flow"), CultureInfo.InvariantCulture);
+                    QiQmin = Convert.ToDouble(iniFile.Read(Convert.ToString(cbR.SelectedItem), "Qmin_" + Convert.ToString(cbG.SelectedItem)), CultureInfo.InvariantCulture);
 
                     QiQm = QiQmin / Flow;
                     
                 }
-                else
-                {
-                    Flow = Convert.ToDouble(iniFile.Read(Convert.ToString(cbG.SelectedItem), "Qmax_Flow"));
-                    QiQmin = Convert.ToDouble(iniFile.Read(Convert.ToString(cbR.SelectedItem), "Qmin_" + Convert.ToString(cbG.SelectedItem)));
-
-                    QiQm = QiQmin / Flow;
-                }
+                
 
                 
             }
@@ -135,8 +130,6 @@ namespace WMECalculation
 
             double sum = 0;
 
-            var readIni = new IniFile("config.ini");
-
             for (int i = 0; i < 8; i++)
             {
                 sum += QiValues[i] * lbValues[i];
@@ -147,15 +140,8 @@ namespace WMECalculation
             
             if (double.IsNaN(result))
             {
-                if(readIni.Read("Language") == "en-US")
-                {
-                    lbResult.Content = "0.00";
-                }
-                else
-                {
-                    lbResult.Content = "0,00";
-                }
-                
+                    lbResult.Content = string.Format("{0:0.00}", Convert.ToString(0, CultureInfo.InvariantCulture));
+   
             }
 
             if (result > 0.404 || result < -0.404)
