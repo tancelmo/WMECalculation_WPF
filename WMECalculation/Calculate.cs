@@ -137,11 +137,11 @@ namespace WMECalculation
 
             result = sum / QiValues.Sum();
             lbResult.Content = string.Format("{0:0.00}", result);
-            
+
             if (double.IsNaN(result))
             {
-                    lbResult.Content = string.Format("{0:0.00}", Convert.ToString(0, CultureInfo.InvariantCulture));
-   
+                lbResult.Content = string.Format("{0:0.00}", 0, CultureInfo.InvariantCulture);
+
             }
 
             if (result > 0.404 || result < -0.404)

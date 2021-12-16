@@ -26,7 +26,7 @@ namespace WMECalculation
             ///
             /// 1 instance
             /// 
-
+            
             StdFunctions.InstanceApp(this);
 
             /// Initialize Loading page

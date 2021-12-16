@@ -49,10 +49,9 @@ namespace WMECalculation
             }
             else
             {
-                if (Thread.CurrentThread.CurrentCulture.Name == "en-US") 
-                {
-                    double QiQmin = Convert.ToDouble(iniFile.Read(Convert.ToString(comboBoxR.SelectedItem), "Qmin_" + Convert.ToString(comboBoxG.SelectedItem)).Replace("," , "."));
-                    double flow = Convert.ToDouble(iniFile.Read(Convert.ToString(comboBoxG.SelectedItem), "Qmax_Flow"));
+                
+                    double QiQmin = Convert.ToDouble(iniFile.Read(Convert.ToString(comboBoxR.SelectedItem), "Qmin_" + Convert.ToString(comboBoxG.SelectedItem)), CultureInfo.InvariantCulture);
+                    double flow = Convert.ToDouble(iniFile.Read(Convert.ToString(comboBoxG.SelectedItem), "Qmax_Flow"), CultureInfo.InvariantCulture);
 
                     lbFQmax.Content = Convert.ToString(flow) + " m³/h";
                     lbFQ07.Content = Convert.ToString(flow * 0.7) + " m³/h";
@@ -63,22 +62,7 @@ namespace WMECalculation
                     lbFQ05.Content = Convert.ToString(flow * 0.05) + " m³/h";
                     lbFQm.Content = Convert.ToString(QiQmin + " m³/h");
                     lbwFQm.Content = Convert.ToString(QiQmin / flow);
-                }
-                else
-                {
-                    double QiQmin = Convert.ToDouble(iniFile.Read(Convert.ToString(comboBoxR.SelectedItem), "Qmin_" + Convert.ToString(comboBoxG.SelectedItem)));
-                    double flow = Convert.ToDouble(iniFile.Read(Convert.ToString(comboBoxG.SelectedItem), "Qmax_Flow"));
-
-                    lbFQmax.Content = Convert.ToString(flow) + " m³/h";
-                    lbFQ07.Content = Convert.ToString(flow * 0.7) + " m³/h";
-                    lbFQ04.Content = Convert.ToString(flow * 0.4) + " m³/h";
-                    lbFQ25.Content = Convert.ToString(flow * 0.25) + " m³/h";
-                    lbFQ15.Content = Convert.ToString(flow * 0.15) + " m³/h";
-                    lbFQ10.Content = Convert.ToString(flow * 0.10) + " m³/h";
-                    lbFQ05.Content = Convert.ToString(flow * 0.05) + " m³/h";
-                    lbFQm.Content = Convert.ToString(QiQmin + " m³/h");
-                    lbwFQm.Content = Convert.ToString(QiQmin / flow);
-                }
+                
 
 
             }
