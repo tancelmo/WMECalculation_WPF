@@ -26,7 +26,7 @@
     <system:String x:Key="Maximize">Maximizar</system:String>
     <system:String x:Key="Restore">Restore Down</system:String>
     <system:String x:Key="Close">Cerrar</system:String>
-
+    <system:String x:Key="FactorCheckBoxLabel">Factor de Peso Customizado</system:String>
     <!--Text Blocks-->
 
 
@@ -70,5 +70,5 @@
     <TextBlock x:Key="cbxG" Text="Seleccione una Designación G"/>
     <TextBlock x:Key="cbxRange" Text="Seleccione un rango"/>
     <TextBlock x:Key="LabelResult" FontSize="13" FontWeight="Normal" FontStyle="Normal" FontFamily="Segoe UI" Text="Resultado del cálculo."/>
-
+    
 </ResourceDictionary>

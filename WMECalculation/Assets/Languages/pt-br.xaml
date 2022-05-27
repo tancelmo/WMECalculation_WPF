@@ -26,7 +26,7 @@
     <system:String x:Key="Maximize">Maximizar</system:String>
     <system:String x:Key="Restore">Restaurar abaixo</system:String>
     <system:String x:Key="Close">Fechar</system:String>
-
+    <system:String x:Key="FactorCheckBoxLabel">Fator de Ponderação Customizado</system:String>
     <!--Text Blocks-->
 
     <TextBlock x:Key="Options" Text="Opções"/>
@@ -69,5 +69,7 @@
     <TextBlock x:Key="cbxG" Text="Selecione uma designação G"/>
     <TextBlock x:Key="cbxRange" Text="Selecione um Range"/>
     <TextBlock x:Key="LabelResult" FontSize="13" FontWeight="Normal" FontStyle="Normal" FontFamily="Segoe UI" Text="Resultado do cálculo."/>
+    
+    
 
 </ResourceDictionary>

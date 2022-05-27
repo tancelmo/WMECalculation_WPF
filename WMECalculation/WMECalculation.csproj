@@ -131,6 +131,7 @@
     <Compile Include="Calculate.cs" />
     <Compile Include="CalculateGears.cs" />
     <Compile Include="Connection.cs" />
+    <Compile Include="Globals.cs" />
     <Compile Include="View\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>

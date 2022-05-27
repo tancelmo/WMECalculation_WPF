@@ -17,7 +17,9 @@
     <Window.InputBindings>
         <KeyBinding Key="F5" Command="New"/>
     </Window.InputBindings>
-
+    <Window.Resources>
+        <local:Globals x:Key="GlobalVariables"/>
+    </Window.Resources>
     <Grid>
         <Button x:Name="btnMinimize"
                 Template="{DynamicResource ChromeButton}"
@@ -93,7 +95,9 @@
                         <TextBlock x:Name="iconCorrection" Text="&#xE9F5;" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="pack://application:,,,/Assets/Fonts/#Segoe MDL2 Assets"/>
                     </MenuItem.Icon>
                 </MenuItem>
-
+                <CheckBox x:Name="FactorCheckBox" Margin="3 0 0 0" x:FieldModifier="public" Height="30" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked">
+                    <TextBlock Text="{DynamicResource FactorCheckBoxLabel}" Margin="14 0 0 0" Padding="0 0 10 0"/>
+                </CheckBox>
                 <MenuItem Name="menuAbout" Click="menuAbout_Click" Height="30" Header="{DynamicResource About}" Template="{DynamicResource SingleDropDownMenuItem}">
                     <MenuItem.Icon>
                         <TextBlock x:Name="iconAbout" Text="&#xE946;" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="pack://application:,,,/Assets/Fonts/#Segoe MDL2 Assets"/>
@@ -207,19 +211,19 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Label Content="{DynamicResource WeightFactor}" HorizontalContentAlignment="Left" Grid.Row="0" Margin="0,-2,0,0" FontSize="11"/>
-                <Label Name="lbwFQmax" Content="0,4" HorizontalAlignment="Left" Grid.Row="0" Margin="0,12,0,0"/>
+                <Label Name="lbwFQmax" Content="{Binding Source={StaticResource GlobalVariables}, Path=KQmax}" HorizontalAlignment="Left" Grid.Row="0" Margin="0,12,0,0"/>
                 <Label Content="{DynamicResource WeightFactor1}" HorizontalContentAlignment="Left" Grid.Row="1" Margin="0,-2,0,0" FontSize="11"/>
-                <Label Name="lbwFQ07" Content="0,7" HorizontalAlignment="Left" Grid.Row="1" Margin="0,12,0,0"/>
+                <Label Name="lbwFQ07" Content="{Binding Source={StaticResource GlobalVariables}, Path=KQ07}" HorizontalAlignment="Left" Grid.Row="1" Margin="0,12,0,0"/>
                 <Label Name="lbwTQ04" Content="{DynamicResource WeightFactor2}" HorizontalContentAlignment="Left" Grid.Row="2" Margin="0,-2,0,0" FontSize="11"/>
-                <Label Name="lbwFQ04" Content="0,4" HorizontalAlignment="Left" Grid.Row="2" Margin="0,12,0,0"/>
+                <Label Name="lbwFQ04" Content="{Binding Source={StaticResource GlobalVariables}, Path=KQ04}" HorizontalAlignment="Left" Grid.Row="2" Margin="0,12,0,0"/>
                 <Label Name="lbwTQ25" Content="{DynamicResource WeightFactor3}" HorizontalContentAlignment="Left" Grid.Row="3" Margin="0,-2,0,0" FontSize="11"/>
-                <Label Name="lbwFQ25" Content="0,25" HorizontalAlignment="Left" Grid.Row="3" Margin="0,12,0,0"/>
+                <Label Name="lbwFQ25" Content="{Binding Source={StaticResource GlobalVariables}, Path=KQ025}" HorizontalAlignment="Left" Grid.Row="3" Margin="0,12,0,0"/>
                 <Label Name="lbwTQ15" Content="{DynamicResource WeightFactor4}" HorizontalContentAlignment="Left" Grid.Row="4" Margin="0,-2,0,0" FontSize="11"/>
-                <Label Name="lbwFQ15" Content="0,15" HorizontalAlignment="Left" Grid.Row="4" Margin="0,12,0,0"/>
+                <Label Name="lbwFQ15" Content="{Binding Source={StaticResource GlobalVariables}, Path=KQ015}" HorizontalAlignment="Left" Grid.Row="4" Margin="0,12,0,0"/>
                 <Label Name="lbwTQ10" Content="{DynamicResource WeightFactor5}" HorizontalContentAlignment="Left" Grid.Row="5" Margin="0,-2,0,0" FontSize="11"/>
-                <Label Name="lbwFQ10" Content="0,10" HorizontalAlignment="Left" Grid.Row="5" Margin="0,12,0,0"/>
+                <Label Name="lbwFQ10" Content="{Binding Source={StaticResource GlobalVariables}, Path=KQ010}" HorizontalAlignment="Left" Grid.Row="5" Margin="0,12,0,0"/>
                 <Label Name="lbwTQ05" Content="{DynamicResource WeightFactor6}" HorizontalContentAlignment="Left" Grid.Row="6" Margin="0,-2,0,0" FontSize="11"/>
-                <Label Name="lbwFQ05" Content="0,05" HorizontalAlignment="Left" Grid.Row="6" Margin="0,12,0,0"/>
+                <Label Name="lbwFQ05" Content="{Binding Source={StaticResource GlobalVariables}, Path=KQ005}" HorizontalAlignment="Left" Grid.Row="6" Margin="0,12,0,0"/>
                 <Label Name="lbwTQm" Content="{DynamicResource WeightFactor7}" HorizontalContentAlignment="Left" Grid.Row="7" Margin="0,-2,0,0" FontSize="11"/>
                 <Label Name="lbwFQm" MaxWidth="60" Content="????" HorizontalAlignment="Left" Grid.Row="7" Margin="0,12,0,0"/>
             </Grid>

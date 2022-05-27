@@ -17,16 +17,19 @@ namespace WMECalculation
     /// </summary>
     public partial class MainWindow : Window
     {
+        public double test258;
         public double resultFromGears;
 
         public MainWindow()
         {
+            
+            
+            Calculate.GetKFactor();
             InitializeComponent();
-
             ///
             /// 1 instance
             /// 
-            
+
             StdFunctions.InstanceApp(this);
 
             /// Initialize Loading page
@@ -38,10 +41,11 @@ namespace WMECalculation
             /// check files
             /// 
 
-            
+
             loading.CheckFiles.Visibility = Visibility.Visible;
             StdFunctions.CheckConfigFiles(this);
-            StdFunctions.StartUP(this, img, lbResult);
+            
+            StdFunctions.StartUP(this, img, lbResult, FactorCheckBox);
             StdFunctions.CheckDbFiles(this);
             loading.CheckFiles.Visibility = Visibility.Hidden;
 
@@ -61,6 +65,7 @@ namespace WMECalculation
             loading.InitConnections.Visibility = Visibility.Hidden;
             loading.CheckFiles.Visibility = Visibility.Visible;
             loading.Close();
+            
 
         }
 
@@ -273,5 +278,22 @@ namespace WMECalculation
             DragMove();
         }
 
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            IniFile iniFile = new IniFile("config.ini");
+            iniFile.Write("KFactorType", "1", "WMECalculation");
+            Calculate.GetKFactor();
+            StdFunctions.UpdateLabelsK(lbwFQmax, lbwFQ07, lbwFQ04,lbwFQ25, lbwFQ15, lbwFQ10, lbwFQ05);
+            Calculate.ExecuteCalc(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, comboBoxG, comboBoxR, lbResult);
+        }
+
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            IniFile iniFile = new IniFile("config.ini");
+            iniFile.Write("KFactorType", "0", "WMECalculation");
+            Calculate.GetKFactor();
+            StdFunctions.UpdateLabelsK(lbwFQmax, lbwFQ07, lbwFQ04, lbwFQ25, lbwFQ15, lbwFQ10, lbwFQ05);
+            Calculate.ExecuteCalc(Qmax, Q07, Q04, Q025, Q015, Q010, Q005, Qm, comboBoxG, comboBoxR, lbResult);
+        }
     }
 }

@@ -28,11 +28,21 @@ namespace WMECalculation
                 App.Current.Shutdown();
             }
         }
-        public static void StartUP(Window mainWindow, Image image, Label result)
+
+        public static void StartUP(Window mainWindow, Image image, Label result, CheckBox checkBox)
         {
             IniFile readIni = new IniFile("config.ini");
+            string KFactorType = readIni.Read("KFactorType", "WMECalculation");
             string currentLanguage = readIni.Read("Language");
             string currentTheme = readIni.Read("Theme");
+            if(KFactorType == "1")
+            {
+                checkBox.IsChecked = true;
+            }
+            else
+            {
+                checkBox.IsChecked = false;
+            }
             if (currentLanguage == "en-US")
             {
                 ResourceDictionary newRes = new ResourceDictionary();
@@ -885,5 +895,20 @@ namespace WMECalculation
             }
             
         }
-    }
-}
+
+        public static void UpdateLabelsK(Label lbFQmax, Label lbFQ07, Label lbFQ04, Label lbQ25, Label lbFQ15, Label lbQ10, Label lbFQ005)
+        {
+            lbFQmax.Content = Globals.KQmax;
+            lbFQ07.Content = Globals.KQ07;
+            lbFQ04.Content = Globals.KQ04;
+            lbQ25.Content = Globals.KQ025;
+            lbFQ15.Content = Globals.KQ015;
+            lbQ10.Content = Globals.KQ010;
+            lbFQ005.Content = Globals.KQ005;
+            
+        }   
+            
+    }       
+}           
+            
+            

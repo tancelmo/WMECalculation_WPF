@@ -26,7 +26,7 @@
     <system:String x:Key="Maximize">Maximize</system:String>
     <system:String x:Key="Restore">Restore Down</system:String>
     <system:String x:Key="Close">Close</system:String>
-    
+    <system:String x:Key="FactorCheckBoxLabel">Custom Weight Factor</system:String>
     <!--Text Blocks-->
 
 
